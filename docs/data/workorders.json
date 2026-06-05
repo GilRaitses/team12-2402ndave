@@ -1,0 +1,9 @@
+{
+  "data": {
+    "workOrders": {
+      "totalCount": 0,
+      "nodes": []
+    }
+  },
+  "_note": "Placeholder until scripts/fetch_all.py succeeds. Re-run sync_pages.sh after hydration."
+}
