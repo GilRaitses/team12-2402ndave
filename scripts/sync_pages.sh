@@ -15,11 +15,11 @@ cat > "$ROOT/docs/index.html" <<'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=submission.html" />
+  <meta http-equiv="refresh" content="0; url=deck.html" />
   <title>Team 12 — 240 2nd Avenue</title>
 </head>
 <body>
-  <p><a href="submission.html">Team 12 Submission</a> · <a href="dashboard/index.html">Dashboard</a></p>
+  <p><a href="deck.html">Pitch deck</a> · <a href="submission.html">Submission</a> · <a href="dashboard/index.html">Dashboard</a></p>
 </body>
 </html>
 EOF

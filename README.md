@@ -24,7 +24,10 @@ python3 scripts/fetch_all.py     # hydrate data/*.json
 python3 -m http.server 8080 --directory .
 # → http://localhost:8080/dashboard/
 
-# Live demo server (judges — primary)
+# Local secrets (interactive — never committed)
+python3 scripts/setup_env.py
+
+# Live demo server (screenshots + OpenAI)
 python3 backend/api_server.py    # http://127.0.0.1:8787/dashboard/
 ```
 

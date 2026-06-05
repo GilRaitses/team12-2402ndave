@@ -81,6 +81,19 @@ def load_json(path: Path) -> dict | list:
     return json.loads(path.read_text()) if path.exists() else {}
 
 
+def validate_structured(structured: dict) -> str | None:
+    """Return error message if payload is not safe to write to CA."""
+    if not structured or not isinstance(structured, dict):
+        return "Missing structured payload"
+    signal = (structured.get("rawSignal") or structured.get("signal") or "").strip()
+    cleaned = (structured.get("cleanedDescription") or "").strip()
+    if len(signal) < 8 and len(cleaned) < 20:
+        return "Signal too short — provide a field observation before recording"
+    if not cleaned and signal:
+        structured["cleanedDescription"] = signal
+    return None
+
+
 def append_closure(entry: dict) -> None:
     rows = load_json(CLOSURE_LOG) if CLOSURE_LOG.exists() else []
     if not isinstance(rows, list):
@@ -143,7 +156,10 @@ class Handler(BaseHTTPRequestHandler):
         body = self._read_json()
 
         if path == "/api/structure":
-            signal = body.get("signal", "")
+            signal = (body.get("signal") or "").strip()
+            if len(signal) < 8:
+                self._json(400, {"ok": False, "error": "Signal must be at least 8 characters"})
+                return
             wo_path = DATA / "workorders.json"
             work_orders = []
             if body.get("live"):
@@ -177,6 +193,10 @@ class Handler(BaseHTTPRequestHandler):
 
         if path == "/api/record":
             structured = body.get("structured") or body
+            err = validate_structured(structured)
+            if err:
+                self._json(400, {"ok": False, "error": err})
+                return
             try:
                 result = self._record_to_ca(structured, update_only=body.get("updateOnly", False))
                 append_closure({"at": int(time.time()), "action": result["action"], "workOrderId": result["workOrder"]["id"], "structured": structured})
@@ -188,15 +208,28 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/closure":
             wid = body.get("workOrderId")
             status = body.get("status", "still")
+            if not wid:
+                self._json(400, {"ok": False, "error": "workOrderId is required"})
+                return
+            if status not in {"fixed", "still", "worse"}:
+                self._json(400, {"ok": False, "error": "status must be fixed, still, or worse"})
+                return
             structured = body.get("structured") or {}
             note = f"\n\n[Student closure verification: {status} @ {int(time.time())}]"
-            desc = (structured.get("cleanedDescription") or "") + note
+            desc = (structured.get("cleanedDescription") or "Student signal follow-up") + note
             try:
                 raw = ca_gql(
                     "mutation U($input: UpdateWorkOrderInput!) { updateWorkOrder(input: $input) { id title description } }",
                     {"input": {"id": wid, "description": desc}},
                 )
-                wo = raw["data"]["updateWorkOrder"]
+                if raw.get("errors"):
+                    msgs = "; ".join(e.get("message", str(e)) for e in raw["errors"])
+                    self._json(404, {"ok": False, "error": msgs or "Work order update failed"})
+                    return
+                wo = (raw.get("data") or {}).get("updateWorkOrder")
+                if not wo:
+                    self._json(404, {"ok": False, "error": "Work order not found or update returned empty"})
+                    return
                 append_closure({"at": int(time.time()), "action": "closure", "status": status, "workOrderId": wid})
                 self._json(200, {"ok": True, "workOrder": wo})
             except Exception as exc:
@@ -246,11 +279,14 @@ class Handler(BaseHTTPRequestHandler):
         cat = structured.get("issueType", "general")
         if cat not in {"hvac", "electrical", "plumbing", "fire_and_life_safety", "general"}:
             cat = "general"
+        label = (structured.get("issueLabel") or structured.get("issueType") or "Facility issue").strip()
+        if label.lower() in {"issue", "general", ""}:
+            label = "Facility issue"
         raw = ca_gql(
             "mutation C($input: CreateWorkOrderInput!) { createWorkOrder(input: $input) { id title description severity workOrderStage { name } } }",
             {
                 "input": {
-                    "title": f"Student Signal: {(structured.get('issueLabel') or 'Issue')[:50]}",
+                    "title": f"Student Signal: {label[:50]}",
                     "description": structured.get("cleanedDescription", ""),
                     "severity": structured.get("severity", "medium"),
                     "locationId": loc_id,

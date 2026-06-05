@@ -95,7 +95,17 @@ def filter_for_category(hits: list, category: str) -> list:
         return [h for h in hits if any(x in (h.get("operational_meaning", "") + json.dumps(h)).lower() for x in ["plumb", "water", "sewer", "leak", "sanitary", "habitability"])]
     if category == "hvac":
         return [h for h in hits if any(x in (h.get("operational_meaning", "") + json.dumps(h)).lower() for x in ["heat", "hvac", "vent", "comfort", "hot"])]
-    return hits
+    if category in {"electrical", "fire_and_life_safety", "elevator", "general"}:
+        keys = {
+            "electrical": ["electr", "power", "light", "wiring"],
+            "fire_and_life_safety": ["fire", "alarm", "sprinkler", "egress", "safety"],
+            "elevator": ["elevator", "lift"],
+            "general": [],
+        }[category]
+        if not keys:
+            return hits[:8]
+        return [h for h in hits if any(x in (h.get("operational_meaning", "") + json.dumps(h)).lower() for x in keys)]
+    return hits[:8]
 
 
 def main() -> int:

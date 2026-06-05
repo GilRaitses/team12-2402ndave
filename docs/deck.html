@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team 12 — Pitch Deck · 240 2nd Avenue</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0a0e14; --surface:#121a24; --text:#e8edf4; --muted:#8b9cb3; --accent:#3d9cf5; --ok:#6bcf7f; --warn:#f5a623; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html, body { height:100%; overflow:hidden; font-family:"IBM Plex Sans",system-ui,sans-serif; background:var(--bg); color:var(--text); }
+    .deck { height:100%; position:relative; }
+    .slide { display:none; height:100%; padding:2.5rem 3rem 4.5rem; flex-direction:column; justify-content:center; }
+    .slide.active { display:flex; }
+    .slide h1 { font-size:2.4rem; line-height:1.15; margin-bottom:0.75rem; }
+    .slide h2 { font-size:1.35rem; color:var(--accent); margin-bottom:1rem; font-weight:600; }
+    .slide p, .slide li { font-size:1.15rem; line-height:1.55; color:var(--muted); max-width:52rem; }
+    .slide ul { padding-left:1.25rem; margin-top:0.5rem; }
+    .slide li { margin:0.4rem 0; }
+    .tag { display:inline-block; font-size:0.7rem; background:rgba(107,207,127,0.15); color:var(--ok); padding:0.2rem 0.55rem; border-radius:4px; text-transform:uppercase; letter-spacing:0.04em; margin-right:0.35rem; }
+    .shot { margin-top:1rem; border:1px solid #2d3a4f; border-radius:8px; overflow:hidden; max-height:58vh; box-shadow:0 8px 32px rgba(0,0,0,0.35); }
+    .shot img { width:100%; display:block; object-fit:contain; background:#0f1419; }
+    .caption { font-size:0.8rem; color:var(--muted); margin-top:0.5rem; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:start; margin-top:0.5rem; }
+    .nav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:0.75rem 1.5rem; background:rgba(10,14,20,0.92); border-top:1px solid #2d3a4f; z-index:10; }
+    .nav button { background:var(--accent); color:#fff; border:none; padding:0.55rem 1.1rem; border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem; }
+    .nav button:disabled { opacity:0.35; cursor:default; }
+    .nav .meta { font-size:0.85rem; color:var(--muted); }
+    .nav a { color:var(--accent); text-decoration:none; font-size:0.85rem; }
+    .warn { color:var(--warn); }
+    @media (max-width:900px) { .two-col { grid-template-columns:1fr; } .slide { padding:1.5rem 1.25rem 4rem; } .slide h1 { font-size:1.6rem; } }
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck">
+    <section class="slide active" data-i="0">
+      <p><span class="tag">Challenge 01</span><span class="tag">Challenge 02</span></p>
+      <h1>240 2nd Avenue Operations</h1>
+      <h2>Students sense failures first. Operators need signal → evidence → action → verification.</h2>
+      <p>Team 12 · The City Hacks The State · NYC Tech Week 2026 · Hub 12</p>
+      <ul style="margin-top:1.25rem">
+        <li>Daniel Lopez · Gil Raitses</li>
+        <li>CriticalAsset GraphQL · NYC Open Data · OpenAI structuring</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-i="1">
+      <h2>Problem</h2>
+      <p>Work orders exist, but field truth is thin. Students experience plumbing, HVAC, and safety issues before the system reflects them.</p>
+      <ul>
+        <li>Operators see scheduled tasks, not lived experience</li>
+        <li>Public 311/HPD data is noisy unless geofenced to the building</li>
+        <li>Closure loops rarely return to the student who reported</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-i="2">
+      <h2>Solution — two surfaces</h2>
+      <div class="two-col">
+        <div>
+          <p><strong style="color:var(--text)">Live demo</strong> — <code>backend/api_server.py</code> on localhost:8787</p>
+          <ul>
+            <li>Fresh CriticalAsset pull</li>
+            <li>OpenAI <code>gpt-4o-mini</code> structuring</li>
+            <li>In-browser record + closure write-back</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong style="color:var(--text)">GitHub Pages backup</strong> — static JSON cache</p>
+          <ul>
+            <li>Dashboard + workflow UI</li>
+            <li>Portfolio-only filter hides test WOs</li>
+            <li>Banner discloses static mode</li>
+          </ul>
+        </div>
+      </div>
+      <p class="caption warn" style="margin-top:1rem">API keys stay in local <code>.env</code> only — never in git or Pages (see submission checklist).</p>
+    </section>
+
+    <section class="slide" data-i="3">
+      <h2>Challenge 01 — Live operations dashboard</h2>
+      <div class="shot"><img src="screenshots/02-dashboard-table.png" alt="Live dashboard with 3 portfolio work orders" /></div>
+      <p class="caption">Verified screenshot · localhost:8787 · Portfolio only ON · live CriticalAsset feed</p>
+    </section>
+
+    <section class="slide" data-i="4">
+      <h2>Challenge 01 — Building map + portfolio context</h2>
+      <div class="shot"><img src="screenshots/01-dashboard-live.png" alt="Leaflet map pin at 240 2nd Avenue" /></div>
+      <p class="caption">Verified screenshot · Leaflet pin 40.7326568, -73.9844033 · 53 sub-locations · 100 assets</p>
+    </section>
+
+    <section class="slide" data-i="5">
+      <h2>Challenge 02 — Student signal intake</h2>
+      <div class="shot"><img src="screenshots/03-workflow-intake.png" alt="Workflow steps 1-2 field observation" /></div>
+      <p class="caption">Verified screenshot · WO selection + plain-English signal + photo note</p>
+    </section>
+
+    <section class="slide" data-i="6">
+      <h2>Challenge 02 — OpenAI structuring + NYC evidence</h2>
+      <div class="shot"><img src="screenshots/06-workflow-ai-structured.png" alt="AI OpenAI badge and 311 building-specific hits" /></div>
+      <p class="caption">Verified screenshot · AI: OpenAI (gpt-4o-mini) · confidence labels · 35 building-specific public hits</p>
+    </section>
+
+    <section class="slide" data-i="7">
+      <h2>Challenge 02 — Work Order Copilot</h2>
+      <div class="shot"><img src="screenshots/07-workflow-copilot-record.png" alt="Before after WO description and compliance" /></div>
+      <p class="caption">Verified screenshot · weak WO → AI-enriched description · compliance obligations · Record to CriticalAsset</p>
+    </section>
+
+    <section class="slide" data-i="8">
+      <h2>GitHub Pages backup (static)</h2>
+      <div class="shot"><img src="screenshots/05-pages-static-banner.png" alt="Static mode banner on GitHub Pages" /></div>
+      <p class="caption">Verified screenshot · gilraitses.github.io · honest static-mode disclosure</p>
+    </section>
+
+    <section class="slide" data-i="9">
+      <h2>Limits &amp; honesty</h2>
+      <ul>
+        <li>Prototype — not production, emergency, or legal advice</li>
+        <li>Human review required on all AI output</li>
+        <li>M2M API creds from sheet not yet activated — human session auth used</li>
+        <li>Photo capture stores filename note only (no CA attachment upload in v1)</li>
+        <li>Secrets in <code>.env</code> / GitHub Secrets — never in client-side code</li>
+      </ul>
+      <p style="margin-top:1.25rem"><a href="submission.html" style="color:var(--accent)">Full submission checklist →</a> · <a href="dashboard/workflow.html" style="color:var(--accent)">Open workflow →</a></p>
+    </section>
+  </div>
+
+  <nav class="nav">
+    <a href="submission.html">← Submission</a>
+    <span class="meta"><span id="cur">1</span> / <span id="total">10</span></span>
+    <div>
+      <button id="prev" disabled>← Prev</button>
+      <button id="next">Next →</button>
+    </div>
+  </nav>
+
+  <script>
+    const slides = [...document.querySelectorAll(".slide")];
+    let i = 0;
+    const show = (n) => {
+      i = Math.max(0, Math.min(slides.length - 1, n));
+      slides.forEach((s, j) => s.classList.toggle("active", j === i));
+      document.getElementById("cur").textContent = i + 1;
+      document.getElementById("total").textContent = slides.length;
+      document.getElementById("prev").disabled = i === 0;
+      document.getElementById("next").disabled = i === slides.length - 1;
+    };
+    document.getElementById("prev").onclick = () => show(i - 1);
+    document.getElementById("next").onclick = () => show(i + 1);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); show(i + 1); }
+      if (e.key === "ArrowLeft") show(i - 1);
+    });
+    show(0);
+  </script>
+</body>
+</html>

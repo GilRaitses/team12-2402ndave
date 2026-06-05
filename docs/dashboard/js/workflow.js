@@ -97,7 +97,10 @@ async function init() {
 
 document.getElementById("btn-structure").addEventListener("click", async () => {
   const text = document.getElementById("signal-input").value.trim();
-  if (!text) return;
+  if (!text || text.trim().length < 8) {
+    alert("Enter a field observation (at least 8 characters).");
+    return;
+  }
   const photo = document.getElementById("photo-note").value.trim();
   const fileInput = document.getElementById("photo-file");
   let photoNote = photo;
@@ -144,6 +147,11 @@ document.getElementById("btn-download").addEventListener("click", () => {
 
 document.getElementById("btn-record").addEventListener("click", async () => {
   if (!lastStructured) return;
+  const desc = (lastStructured.cleanedDescription || lastStructured.rawSignal || "").trim();
+  if (desc.length < 20) {
+    alert("Structure a signal first — description too short to record.");
+    return;
+  }
   const btn = document.getElementById("btn-record");
   const cmd = document.getElementById("record-cmd");
   btn.disabled = true;

@@ -60,8 +60,31 @@
     </section>
 
     <section>
+      <h2>Pitch deck (screenshot-based)</h2>
+      <div class="card">
+        <p>Verified product screenshots captured from live localhost demo and GitHub Pages backup.</p>
+        <a class="cta" href="deck.html">Open pitch deck →</a>
+        <p class="muted" style="margin-top:0.75rem">Use arrow keys or Next/Prev in the deck. All images in <code>docs/screenshots/</code>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why API keys are not in GitHub</h2>
+      <div class="card">
+        <ul>
+          <li><strong>GitHub Pages is public static hosting.</strong> Any key in HTML/JS is visible to everyone via View Source.</li>
+          <li><strong>Git history is permanent.</strong> Even deleted secrets remain in old commits.</li>
+          <li><strong>GitHub Secrets</strong> only inject into Actions/Codespaces at build time — they do not protect a static site served to browsers.</li>
+          <li><strong>Correct pattern:</strong> store <code>OPENAI_API_KEY</code> and <code>CA_CLIENT_SECRET</code> in local <code>.env</code> (gitignored). Python <code>api_server.py</code> reads them server-side only.</li>
+          <li><strong>Setup:</strong> <code>python3 scripts/setup_env.py</code> — interactive local paste, never committed.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
       <h2>Live product links</h2>
       <div class="card links">
+        <a href="deck.html">→ Pitch deck (verified screenshots)</a>
         <a href="dashboard/index.html">→ Challenge 01: Work Orders Dashboard</a>
         <a href="dashboard/workflow.html">→ Challenge 02: Student Signal Workflow</a>
         <a href="https://github.com/GilRaitses/team12-2402ndave">→ GitHub Repository</a>
