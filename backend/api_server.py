@@ -301,9 +301,15 @@ class Handler(BaseHTTPRequestHandler):
 
     def _serve_static(self, path: str) -> None:
         if path in ("/", ""):
-            path = "/dashboard/index.html"
-        if path == "/submission.html":
+            path = "/cover.html"
+        if path == "/cover.html":
+            rel = ROOT / "docs" / "cover.html"
+        elif path == "/submission.html":
             rel = ROOT / "docs" / "submission.html"
+        elif path == "/deck.html":
+            rel = ROOT / "docs" / "deck.html"
+        elif path.startswith("/screenshots/"):
+            rel = ROOT / "docs" / path.lstrip("/")
         elif path.startswith("/dashboard/"):
             rel = ROOT / path.lstrip("/")
         elif path.startswith("/data/"):
@@ -319,6 +325,11 @@ class Handler(BaseHTTPRequestHandler):
             return
         ctype, _ = mimetypes.guess_type(str(rel))
         body = rel.read_bytes()
+        if (ctype or "").startswith("text/html"):
+            text = body.decode("utf-8", errors="replace")
+            if "<body" in text and "data-live-api" not in text:
+                text = text.replace("<body", '<body data-live-api="true"', 1)
+            body = text.encode()
         self.send_response(200)
         self.send_header("Content-Type", ctype or "application/octet-stream")
         self.send_header("Content-Length", str(len(body)))
@@ -333,10 +344,12 @@ class Handler(BaseHTTPRequestHandler):
 def main() -> None:
     load_dotenv()
     port = int(os.environ.get("API_PORT", os.environ.get("PROXY_PORT", "8787")))
-    print(f"Team 12 demo server: http://127.0.0.1:{port}/dashboard/")
-    print(f"  Workflow: http://127.0.0.1:{port}/dashboard/workflow.html")
-    print(f"  Submission: http://127.0.0.1:{port}/submission.html")
-    ThreadingHTTPServer(("127.0.0.1", port), Handler).serve_forever()
+    bind = os.environ.get("API_BIND", "127.0.0.1")
+    host = "127.0.0.1" if bind == "local" else "0.0.0.0"
+    print(f"Team 12 demo server: http://{host}:{port}/cover.html")
+    print(f"  Dashboard: http://{host}:{port}/dashboard/")
+    print(f"  Workflow:  http://{host}:{port}/dashboard/workflow.html")
+    ThreadingHTTPServer((host, port), Handler).serve_forever()
 
 
 if __name__ == "__main__":

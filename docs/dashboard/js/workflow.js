@@ -204,5 +204,8 @@ document.querySelectorAll("[data-closure]").forEach((btn) => {
   });
 });
 
-Api.showBanner();
-init().catch((e) => console.error(e));
+(async () => {
+  await Api.init();
+  Api.showBanner();
+  await init();
+})().catch((e) => console.error(e));

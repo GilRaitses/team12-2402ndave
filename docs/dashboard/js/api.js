@@ -1,7 +1,32 @@
-/** Live demo API helpers — localhost uses api_server.py */
+/** Live demo API — probes /api/health when not on GitHub Pages */
 const Api = {
+  _live: false,
+  _ready: null,
+
+  async init() {
+    if (this._ready) return this._ready;
+    this._ready = (async () => {
+      const h = window.location.hostname;
+      if (h === "localhost" || h === "127.0.0.1") {
+        this._live = true;
+        return;
+      }
+      if (document.body?.dataset?.liveApi === "true") {
+        try {
+          const r = await fetch("/api/health", { signal: AbortSignal.timeout(5000) });
+          this._live = r.ok;
+        } catch {
+          this._live = false;
+        }
+        return;
+      }
+      this._live = false;
+    })();
+    return this._ready;
+  },
+
   isLive() {
-    return window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+    return this._live;
   },
 
   dataBase() {
@@ -59,13 +84,13 @@ const Api = {
     if (!this.isLive()) {
       const b = document.createElement("div");
       b.className = "demo-banner static";
-      b.textContent = "Static mode (GitHub Pages). Run python3 backend/api_server.py for live demo.";
+      b.textContent = "Static mode (GitHub Pages). Live deployment: see submission cover page.";
       document.body.prepend(b);
       return;
     }
     const b = document.createElement("div");
     b.className = "demo-banner live";
-    b.textContent = "LIVE DEMO — connected to CriticalAsset + OpenAI";
+    b.textContent = "LIVE — CriticalAsset + OpenAI + NYC Open Data (server-side secrets)";
     document.body.prepend(b);
   },
 };

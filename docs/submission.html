@@ -46,14 +46,15 @@
           <tr><td>Team name</td><td>Team 12 — 240 2nd Avenue</td></tr>
           <tr><td>Team members</td><td>Daniel Lopez · Gil Raitses · Hub 12 roster (Team 12 — 240 2nd Avenue)</td></tr>
           <tr><td>Dashboard name</td><td>240 2nd Avenue Operations Dashboard + Student Signal Workflow</td></tr>
-          <tr><td>Dashboard link</td><td><a href="dashboard/index.html">Dashboard</a> · <a href="dashboard/workflow.html">Workflow (C02)</a></td></tr>
+          <tr><td>Submission URL</td><td><a href="http://3.94.205.179:8787/cover.html">http://3.94.205.179:8787/cover.html</a> (live AWS)</td></tr>
+          <tr><td>Dashboard link</td><td><a href="http://3.94.205.179:8787/dashboard/">Dashboard</a> · <a href="http://3.94.205.179:8787/dashboard/workflow.html">Workflow (C02)</a></td></tr>
           <tr><td>Repository</td><td><a href="https://github.com/GilRaitses/team12-2402ndave">github.com/GilRaitses/team12-2402ndave</a></td></tr>
           <tr><td>Target user</td><td>Building operator / facilities team at 240 2nd Avenue; students as early field sensors</td></tr>
           <tr><td>Problem statement</td><td>Work orders exist but field truth is thin. Students experience issues first; operators need signal → evidence → action → verification.</td></tr>
           <tr><td>Data sources</td><td>CriticalAsset GraphQL (WO/assets/locations) · NYC 311 · HPD violations · compliance rule pack</td></tr>
           <tr><td>AI tools</td><td>OpenAI <code>gpt-4o-mini</code> via <code>backend/api_server.py</code> (live demo); regex fallback disclosed in UI badge</td></tr>
           <tr><td>3-minute pitch</td><td>See demo script below</td></tr>
-          <tr><td>Limitations</td><td>Prototype only; not production/emergency/legal advice; M2M API creds inactive (session auth used); static Pages cannot call CA write API directly</td></tr>
+          <tr><td>Limitations</td><td>Prototype only; not production/emergency/legal advice; M2M API creds inactive (session auth used); terminate EC2 after hackathon</td></tr>
           <tr><td>Before real-world use</td><td>Rotate secrets; enable M2M scopes; legal review of compliance hints; photo upload pipeline; live write proxy; student identity/privacy policy</td></tr>
         </table>
       </div>
@@ -84,6 +85,8 @@
     <section>
       <h2>Live product links</h2>
       <div class="card links">
+        <a href="http://3.94.205.179:8787/cover.html">→ PRIMARY: Live AWS submission cover</a>
+        <a href="cover.html">→ Cover page (GitHub Pages mirror)</a>
         <a href="deck.html">→ Pitch deck (verified screenshots)</a>
         <a href="dashboard/index.html">→ Challenge 01: Work Orders Dashboard</a>
         <a href="dashboard/workflow.html">→ Challenge 02: Student Signal Workflow</a>
@@ -141,19 +144,17 @@
     <section>
       <h2>Live demo mode</h2>
       <div class="card">
-        <p><strong>Primary (judges):</strong> <code>python3 backend/api_server.py</code> → <code>http://localhost:8787/dashboard/workflow.html</code></p>
-        <p><strong>Backup:</strong> <a href="https://gilraitses.github.io/team12-2402ndave/">GitHub Pages</a> (static JSON cache)</p>
-        <pre style="margin-top:0.75rem;font-size:0.8rem;background:var(--bg);padding:0.75rem;border-radius:6px;">cd team12-2402ndave
-python3 scripts/fetch_all.py
-python3 backend/api_server.py
-open http://localhost:8787/dashboard/workflow.html</pre>
+        <p><strong>Primary (judges):</strong> <a href="http://3.94.205.179:8787/cover.html">http://3.94.205.179:8787/cover.html</a> — AWS EC2, all APIs live, secrets server-side.</p>
+        <p><strong>Backup:</strong> <a href="https://gilraitses.github.io/team12-2402ndave/cover.html">GitHub Pages</a> (static JSON cache)</p>
+        <p><strong>Teardown after hackathon:</strong> <code>aws ec2 terminate-instances --instance-ids i-014a8df0209e951c7</code></p>
       </div>
     </section>
 
     <section>
       <h2>Infrastructure note</h2>
       <div class="card">
-        <p><strong>No AWS S3, SQS, or custom cloud infra required.</strong> Stack: Python API server + OpenAI + CriticalAsset GraphQL + NYC Open Data → GitHub Pages backup.</p>
+        <p><strong>Live:</strong> AWS EC2 <code>t3.micro</code> · <code>deploy/aws/deploy.sh</code> · systemd <code>team12-api</code> · port 8787.</p>
+        <p><strong>Not required by brief:</strong> MCP server, S3, SQS. Backend proxy pattern matches CriticalAsset API guide.</p>
       </div>
     </section>
 

@@ -187,5 +187,8 @@ document.getElementById("portfolio-only")?.addEventListener("change", (e) => {
   if (el) el.addEventListener("change", render);
 });
 
-Api.showBanner();
-loadData();
+(async () => {
+  await Api.init();
+  Api.showBanner();
+  loadData();
+})();
