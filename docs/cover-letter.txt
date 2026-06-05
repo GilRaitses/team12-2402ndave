@@ -1,0 +1,53 @@
+Subject: Team 12 — 240 2nd Avenue — Hackathon Submission (Hub 12)
+
+Dear Judges and Organizers,
+
+Please find our submission for The City Hacks The State (Team 12, Hub 12, building: 240 2nd Avenue).
+
+SUBMISSION URL (start here):
+https://gilraitses.github.io/team12-2402ndave/cover.html
+
+This GitHub Pages site is our submission canvas: deliverables map, pitch deck, rules checklist, static UI previews, and an auditable architecture / construction log for other teams. The cover page links to our live product on AWS, where OpenAI structuring, CriticalAsset GraphQL, and in-browser write-back run with server-side secrets only.
+
+LIVE DEMO (click from cover page or use directly):
+http://3.94.205.179:8787/dashboard/workflow.html
+API health: http://3.94.205.179:8787/api/health
+
+DELIVERABLES
+
+| Item | URL |
+|------|-----|
+| Submission cover (GitHub Pages) | https://gilraitses.github.io/team12-2402ndave/cover.html |
+| Architecture & construction log | https://gilraitses.github.io/team12-2402ndave/architecture.html |
+| Live workflow (C02) | http://3.94.205.179:8787/dashboard/workflow.html |
+| Live dashboard (C01) | http://3.94.205.179:8787/dashboard/ |
+| Pitch deck | https://gilraitses.github.io/team12-2402ndave/deck.html |
+| Rules checklist | https://gilraitses.github.io/team12-2402ndave/submission.html |
+| Repository | https://github.com/GilRaitses/team12-2402ndave |
+| CriticalAsset console | https://2402ndave.stg.criticalasset.com/ |
+
+WALKTHROUGH (3 minutes)
+
+1. Open the submission cover URL above.
+2. Click "Open live demo" — green LIVE banner confirms AWS engine.
+3. Dashboard (C01): Portfolio-only filter ON → 3 real WOs → map pin at 240 2nd Ave.
+4. Workflow (C02): Select a WO → enter bathroom/plumbing signal → Structure with AI (OpenAI badge) → building-specific 311 evidence → copilot before/after → Record to CriticalAsset → closure button.
+5. Architecture page: auditable phases P0–P5 with git commits for reproduction.
+
+WHAT WE BUILT
+
+Problem: Work orders exist but field truth is thin. Students experience issues before the system reflects them.
+
+Solution: Signal → AI structure → NYC public evidence → compliance hints → CriticalAsset write-back → student closure verification.
+
+Stack: Python api_server.py · CriticalAsset GraphQL · OpenAI gpt-4o-mini · NYC Open Data · vanilla JS dashboard/workflow · GitHub Pages (docs) + AWS EC2 (live engine, ephemeral).
+
+Team: Daniel Lopez · Gil Raitses
+
+Limitations: Prototype only; not legal/emergency advice; human review on AI output; M2M API creds from credential sheet pending activation (human session auth in use). AWS instance terminates after the event.
+
+We did not build an MCP server — the hackathon brief specifies a backend GraphQL proxy and workflow UI, not Model Context Protocol.
+
+Thank you for your time.
+
+Gil Raitses (on behalf of Team 12 — 240 2nd Avenue)

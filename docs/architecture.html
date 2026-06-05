@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team 12 — Architecture &amp; Construction Log</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0a0e14; --surface:#121a24; --border:#2d3a4f; --text:#e8edf4; --muted:#8b9cb3; --accent:#3d9cf5; --ok:#6bcf7f; --warn:#f5a623; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"IBM Plex Sans",system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    header { padding:2rem; border-bottom:1px solid var(--border); }
+    header h1 { font-size:1.6rem; }
+    header p { color:var(--muted); margin-top:0.35rem; }
+    nav.top { margin-top:1rem; font-size:0.9rem; }
+    main { max-width:980px; margin:0 auto; padding:2rem; }
+    section { margin-bottom:2.25rem; }
+    h2 { font-size:1.05rem; color:var(--accent); margin-bottom:0.75rem; }
+    h3 { font-size:0.92rem; margin:1rem 0 0.5rem; color:var(--text); }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:1.25rem; }
+    a { color:var(--accent); }
+    table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+    th, td { text-align:left; padding:0.5rem; border-bottom:1px solid var(--border); vertical-align:top; }
+    th { color:var(--muted); }
+    code, pre { font-size:0.78rem; background:var(--bg); border-radius:4px; }
+    code { padding:0.1rem 0.35rem; }
+    pre { padding:0.85rem; overflow-x:auto; margin-top:0.5rem; border:1px solid var(--border); }
+    ol, ul { padding-left:1.25rem; color:var(--muted); }
+    li { margin:0.35rem 0; }
+    .phase { display:inline-block; font-size:0.65rem; background:rgba(61,156,245,0.2); color:var(--accent); padding:0.12rem 0.4rem; border-radius:3px; margin-right:0.25rem; }
+    .done { color:var(--ok); }
+    .diagram { font-family:ui-monospace,monospace; font-size:0.72rem; line-height:1.45; white-space:pre; color:var(--muted); }
+    .live-cta { display:inline-block; background:var(--ok); color:#0a0e14; font-weight:700; padding:0.65rem 1.2rem; border-radius:8px; text-decoration:none; margin:0.5rem 0.5rem 0 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Architecture &amp; auditable construction log</h1>
+    <p>Team 12 — 240 2nd Avenue · teaching resource for The City Hacks The State</p>
+    <nav class="top">
+      <a href="cover.html">← Submission cover</a> ·
+      <a href="http://3.94.205.179:8787/dashboard/workflow.html" target="_blank" rel="noopener">Live demo (AWS)</a> ·
+      <a href="https://github.com/GilRaitses/team12-2402ndave">Repository</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Submission model (two surfaces)</h2>
+      <div class="card">
+        <p style="color:var(--text);margin-bottom:0.75rem">
+          <strong>GitHub Pages</strong> is the submission canvas: documentation, pitch deck, screenshots, this construction log, and static UI previews.
+          <strong>AWS EC2</strong> hosts the live API with secrets — judges click through from Pages to verify real OpenAI + CriticalAsset + write-back.
+        </p>
+        <a class="live-cta" href="http://3.94.205.179:8787/dashboard/workflow.html" target="_blank" rel="noopener">Open live workflow →</a>
+        <a class="live-cta" href="http://3.94.205.179:8787/api/health" target="_blank" rel="noopener" style="background:var(--accent);color:#fff">API health check →</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>System architecture</h2>
+      <div class="card diagram">┌─────────────────────────────────────────────────────────────────┐
+│  SUBMISSION CANVAS (GitHub Pages — static, auditable, public)   │
+│  cover.html · deck.html · architecture.html · dashboard (static)│
+└────────────────────────────┬────────────────────────────────────┘
+                             │ user clicks "Live demo"
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  LIVE ENGINE (AWS EC2 · team12-hackathon · port 8787)           │
+│  backend/api_server.py                                          │
+│    ├─ GET  /api/health                                          │
+│    ├─ GET  /api/live/workorders  ──► CriticalAsset GraphQL      │
+│    ├─ POST /api/structure        ──► OpenAI gpt-4o-mini         │
+│    ├─ POST /api/record           ──► createWorkOrder / update   │
+│    ├─ POST /api/closure         ──► updateWorkOrder            │
+│    └─ serves dashboard/ + docs/ (injects data-live-api)       │
+│  Secrets: .env on instance only (OPENAI_API_KEY, CA_*)          │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+         ┌───────────────────┼───────────────────┐
+         ▼                   ▼                   ▼
+  CriticalAsset API    OpenAI API         NYC Open Data (SODA)
+  2402ndave.stg...     chat/completions   311 geo + HPD</div>
+    </section>
+
+    <section>
+      <h2>Auditable construction phases</h2>
+      <div class="card">
+        <table>
+          <thead><tr><th>Phase</th><th>State</th><th>Commit</th><th>Artifacts</th></tr></thead>
+          <tbody>
+            <tr><td><span class="phase">P0</span> Scaffold</td><td class="done">closed</td><td><code>1593928</code></td><td>O0 cast, lanes, dashboard shell, repo structure</td></tr>
+            <tr><td><span class="phase">P1</span> Challenge 01</td><td class="done">closed</td><td><code>7ee81b9</code></td><td>auth.py, fetch_all.py, live WO/assets/locations, dashboard UI, GitHub Pages</td></tr>
+            <tr><td><span class="phase">P2</span> Challenge 02 scaffold</td><td class="done">closed</td><td><code>410dedc</code></td><td>workflow.html, workflow-engine.js, enrich_public (zip), record_signal.py</td></tr>
+            <tr><td><span class="phase">P3</span> Last mile / panel-proof</td><td class="done">closed</td><td><code>6c6f48a</code></td><td>api_server.py, OpenAI structuring, building-specific 311, portfolio filter, map</td></tr>
+            <tr><td><span class="phase">P4</span> Screenshots + deck</td><td class="done">closed</td><td><code>cc52e03</code></td><td>Verified screenshots, deck.html, API validation hardening</td></tr>
+            <tr><td><span class="phase">P5</span> AWS live deploy</td><td class="done">closed</td><td><code>985430c</code></td><td>EC2 i-014a8df0209e951c7, deploy/aws/*.sh, systemd team12-api</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted)">Verify any phase: <code>git show &lt;commit&gt;</code> in the repository.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Step-by-step reproduction (for other teams)</h2>
+      <div class="card">
+        <h3>1 — Credentials (never in git)</h3>
+        <pre>cp .env.example .env
+python3 scripts/setup_env.py   # paste CA + OpenAI keys locally</pre>
+
+        <h3>2 — Auth + hydrate</h3>
+        <pre>python3 scripts/auth.py        # M2M first; human login fallback
+python3 scripts/fetch_all.py   # workorders, assets, locations → data/
+python3 scripts/enrich_public.py  # building-specific NYC Open Data</pre>
+
+        <h3>3 — Local live demo</h3>
+        <pre>API_BIND=0.0.0.0 python3 backend/api_server.py
+# http://localhost:8787/dashboard/workflow.html</pre>
+
+        <h3>4 — GitHub Pages (submission canvas)</h3>
+        <pre>./scripts/sync_pages.sh
+git push origin main
+# https://&lt;user&gt;.github.io/team12-2402ndave/cover.html</pre>
+
+        <h3>5 — AWS live engine (secrets on server)</h3>
+        <pre>./deploy/aws/deploy.sh
+# Opens port 8787; .env scp'd to instance; systemd auto-start
+
+# After hackathon:
+./deploy/aws/teardown.sh</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key file inventory</h2>
+      <div class="card">
+        <table>
+          <tr><th>Path</th><th>Role</th></tr>
+          <tr><td><code>scripts/auth.py</code></td><td>OAuth M2M + human session; caches token in data/.token</td></tr>
+          <tr><td><code>scripts/fetch_all.py</code></td><td>CriticalAsset GraphQL hydration; tags hackathon_test WOs</td></tr>
+          <tr><td><code>scripts/enrich_public.py</code></td><td>311 within_circle 250m + address + HPD; operational_meaning</td></tr>
+          <tr><td><code>scripts/ai_structure.py</code></td><td>OpenAI JSON contract + regex fallback</td></tr>
+          <tr><td><code>backend/api_server.py</code></td><td>Live API + static file server; secret boundary</td></tr>
+          <tr><td><code>dashboard/js/api.js</code></td><td>Probes /api/health; routes to live vs static JSON</td></tr>
+          <tr><td><code>dashboard/workflow.html</code></td><td>6-step C02 flow: signal → AI → public → copilot → record → closure</td></tr>
+          <tr><td><code>docs/cover.html</code></td><td>Submission hub (Pages primary URL)</td></tr>
+          <tr><td><code>deploy/aws/deploy.sh</code></td><td>EC2 provision, rsync, systemd</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>API contract (live engine)</h2>
+      <div class="card">
+        <table>
+          <tr><th>Endpoint</th><th>Method</th><th>Purpose</th></tr>
+          <tr><td><code>/api/health</code></td><td>GET</td><td>Sanity check; frontend uses to detect live mode</td></tr>
+          <tr><td><code>/api/live/workorders</code></td><td>GET</td><td>Fresh CriticalAsset pull with fetchedAt</td></tr>
+          <tr><td><code>/api/structure</code></td><td>POST</td><td>{signal, workOrderId?, photoNote?} → OpenAI structured record</td></tr>
+          <tr><td><code>/api/record</code></td><td>POST</td><td>{structured} → createWorkOrder or updateWorkOrder</td></tr>
+          <tr><td><code>/api/closure</code></td><td>POST</td><td>{workOrderId, status, structured} → verification append</td></tr>
+          <tr><td><code>/api/public/enrich?category=</code></td><td>GET</td><td>Building-specific public hits by category</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Design decisions (teaching notes)</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Backend proxy required</strong> — CriticalAsset brief forbids browser-side secrets and CORS direct calls.</li>
+          <li><strong>Pages + AWS split</strong> — Public audit trail on git/Pages; live secrets only on ephemeral EC2.</li>
+          <li><strong>Portfolio-only filter</strong> — Hides <code>Student Signal:</code> test WOs from demo feed.</li>
+          <li><strong>Confidence labels</strong> — AI never claims Verified without evidence (brief pitfall).</li>
+          <li><strong>No MCP</strong> — Brief specifies GraphQL backend + workflow UI, not Model Context Protocol.</li>
+          <li><strong>M2M pending</strong> — Credential sheet pair returns invalid; human session auth works until event desk activates M2M.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>O0 lane log (internal orchestration)</h2>
+      <div class="card">
+        <p style="font-size:0.85rem;color:var(--muted)">Canonical lane manifest: <code>.cca/catalogue/O0/20260605_cityhacks-challenge1/</code></p>
+        <table style="margin-top:0.75rem">
+          <tr><th>Lane</th><th>Deliverable</th><th>Status</th></tr>
+          <tr><td>O1 Auth</td><td>scripts/auth.py, backend proxy pattern</td><td class="done">✓ human fallback live</td></tr>
+          <tr><td>O2 Data</td><td>fetch_all, enrich_public, compliance_rules</td><td class="done">✓ 35 building-specific hits</td></tr>
+          <tr><td>O3 Dashboard</td><td>index.html, filters, map, portfolio toggle</td><td class="done">✓</td></tr>
+          <tr><td>O4 Workflow</td><td>workflow.html, OpenAI, write-back, closure</td><td class="done">✓</td></tr>
+          <tr><td>O5 Deploy</td><td>GitHub Pages + AWS EC2</td><td class="done">✓</td></tr>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

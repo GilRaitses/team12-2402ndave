@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Team 12 — Submission Cover · 240 2nd Avenue</title>
+  <title>Team 12 — Submission · 240 2nd Avenue</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root { --bg:#0a0e14; --surface:#121a24; --border:#2d3a4f; --text:#e8edf4; --muted:#8b9cb3; --accent:#3d9cf5; --ok:#6bcf7f; --warn:#f5a623; }
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:"IBM Plex Sans",system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
-    header { padding:2.5rem 2rem; border-bottom:1px solid var(--border); text-align:center; }
+    header { padding:2.5rem 2rem 2rem; border-bottom:1px solid var(--border); text-align:center; }
     header h1 { font-size:2rem; margin-bottom:0.35rem; }
     header p { color:var(--muted); }
-    .live-box { margin:1.5rem auto 0; max-width:640px; background:rgba(61,156,245,0.12); border:1px solid var(--accent); border-radius:8px; padding:1rem 1.25rem; text-align:left; }
-    .live-box strong { color:var(--ok); }
+    .submit-url { margin:1.25rem auto 0; max-width:720px; background:var(--surface); border:2px solid var(--ok); border-radius:8px; padding:1rem 1.25rem; text-align:center; }
+    .submit-url .label { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--ok); }
+    .submit-url a { font-size:1.05rem; font-weight:600; word-break:break-all; }
+    .live-box { margin:1rem auto 0; max-width:720px; background:rgba(61,156,245,0.1); border:1px solid var(--accent); border-radius:8px; padding:1rem 1.25rem; text-align:center; }
+    .live-btn { display:inline-block; margin-top:0.65rem; background:var(--accent); color:#fff; font-weight:700; padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-size:1rem; }
+    .live-btn:hover { filter:brightness(1.1); }
     main { max-width:920px; margin:0 auto; padding:2rem; }
     section { margin-bottom:2rem; }
     h2 { font-size:1.05rem; color:var(--accent); margin-bottom:0.75rem; }
@@ -24,81 +28,82 @@
     li strong { color:var(--text); }
     table { width:100%; border-collapse:collapse; font-size:0.875rem; }
     th, td { text-align:left; padding:0.55rem; border-bottom:1px solid var(--border); vertical-align:top; }
-    th { color:var(--muted); width:28%; }
-    .cta { display:inline-block; margin:0.35rem 0.5rem 0 0; background:var(--accent); color:#fff; padding:0.65rem 1.1rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; }
+    th { color:var(--muted); width:30%; }
+    .cta { display:inline-block; margin:0.35rem 0.5rem 0 0; background:var(--surface); border:1px solid var(--border); color:var(--text); padding:0.6rem 1rem; border-radius:8px; text-decoration:none; font-weight:500; font-size:0.88rem; }
+    .cta.primary { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
     .tag { display:inline-block; font-size:0.65rem; background:rgba(107,207,127,0.15); color:var(--ok); padding:0.15rem 0.45rem; border-radius:4px; text-transform:uppercase; margin-right:0.25rem; }
     code { font-size:0.8rem; background:var(--bg); padding:0.1rem 0.35rem; border-radius:3px; }
-    .note { font-size:0.9rem; color:var(--muted); border-left:3px solid var(--warn); padding-left:0.75rem; margin-top:0.75rem; }
+    .grid-cta { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
   </style>
 </head>
 <body>
   <header>
-    <p><span class="tag">Submission URL</span><span class="tag">Hub 12</span></p>
+    <p><span class="tag">Hub 12</span><span class="tag">Challenge 01</span><span class="tag">Challenge 02</span></p>
     <h1>Team 12 — 240 2nd Avenue</h1>
     <p>The City Hacks The State · NYC Tech Week 2026</p>
-    <div class="live-box" id="live-box">
-      <strong>Primary submission (fully live):</strong><br />
-      <a id="live-url" href="http://3.94.205.179:8787/cover.html">http://3.94.205.179:8787/cover.html</a>
-      <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--muted)">
-        OpenAI structuring · live CriticalAsset GraphQL · NYC Open Data · in-browser write-back.
-        Secrets on EC2 only (not in git). Instance tagged <code>team12-hackathon</code> — terminate after event.
+
+    <div class="submit-url">
+      <div class="label">Official submission URL (GitHub Pages canvas)</div>
+      <a href="https://gilraitses.github.io/team12-2402ndave/cover.html">https://gilraitses.github.io/team12-2402ndave/cover.html</a>
+    </div>
+
+    <div class="live-box">
+      <div style="font-size:0.85rem;color:var(--muted)">Live product engine — OpenAI + CriticalAsset + write-back (AWS, server-side secrets)</div>
+      <a class="live-btn" href="http://3.94.205.179:8787/dashboard/workflow.html" target="_blank" rel="noopener">▶ Open live demo</a>
+      <p style="margin-top:0.6rem;font-size:0.8rem;color:var(--muted)">
+        <a href="http://3.94.205.179:8787/api/health" target="_blank" rel="noopener">API health</a> ·
+        ephemeral EC2 · terminate after event
       </p>
     </div>
   </header>
 
   <main>
     <section>
-      <h2>Cover note for judges</h2>
+      <h2>How to review this submission</h2>
       <div class="card">
-        <p style="color:var(--text);margin-bottom:0.75rem">
-          This is not a static mockup. The <strong>live AWS deployment</strong> runs <code>backend/api_server.py</code> with
-          server-side credentials for CriticalAsset and OpenAI. The browser never sees API keys.
-          GitHub Pages is a read-only backup with an honest static-mode banner.
-        </p>
-        <p class="note">MCP server: <strong>not required</strong> by the hackathon brief. Challenges ask for a backend proxy + dashboard/workflow, not Model Context Protocol.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Deliverables map</h2>
-      <div class="card">
-        <table>
-          <tr><th>Live product</th><td><a href="http://3.94.205.179:8787/dashboard/">Dashboard (C01)</a> · <a href="http://3.94.205.179:8787/dashboard/workflow.html">Workflow (C02)</a></td></tr>
-          <tr><th>Pitch deck</th><td><a href="http://3.94.205.179:8787/deck.html">deck.html</a> — verified screenshots, arrow-key slides</td></tr>
-          <tr><th>Full checklist</th><td><a href="http://3.94.205.179:8787/submission.html">submission.html</a> — rules fields, judging map, limits</td></tr>
-          <tr><th>Repository</th><td><a href="https://github.com/GilRaitses/team12-2402ndave">github.com/GilRaitses/team12-2402ndave</a></td></tr>
-          <tr><th>Pages backup</th><td><a href="https://gilraitses.github.io/team12-2402ndave/cover.html">GitHub Pages cover</a> (static; no live API)</td></tr>
-          <tr><th>CriticalAsset</th><td><a href="https://2402ndave.stg.criticalasset.com/">2402ndave.stg.criticalasset.com</a></td></tr>
-        </table>
-      </div>
-      <a class="cta" href="http://3.94.205.179:8787/dashboard/workflow.html">Open live workflow</a>
-      <a class="cta" href="http://3.94.205.179:8787/deck.html">Open pitch deck</a>
-      <a class="cta" href="https://github.com/GilRaitses/team12-2402ndave">GitHub repo</a>
-    </section>
-
-    <section>
-      <h2>How it was built</h2>
-      <div class="card">
-        <ol>
-          <li><strong>Auth</strong> — <code>scripts/auth.py</code>: M2M client credentials first; human console session fallback (M2M from credential sheet pending activation at event desk).</li>
-          <li><strong>Data hydration</strong> — <code>scripts/fetch_all.py</code> pulls work orders, assets, locations from CriticalAsset GraphQL into <code>data/*.json</code>.</li>
-          <li><strong>Public evidence</strong> — <code>scripts/enrich_public.py</code>: NYC 311 geospatial query (250m radius at 40.7326568, -73.9844033) + address match + HPD; <code>operational_meaning</code> per hit.</li>
-          <li><strong>AI structuring</strong> — <code>scripts/ai_structure.py</code>: OpenAI <code>gpt-4o-mini</code> JSON contract; regex fallback with UI badge disclosure.</li>
-          <li><strong>Live API</strong> — <code>backend/api_server.py</code>: <code>GET /api/live/workorders</code>, <code>POST /api/structure|record|closure</code>; serves dashboard + docs.</li>
-          <li><strong>Frontend</strong> — Dashboard (filters, map, portfolio-only hygiene) + 6-step workflow (copilot before/after, closure buttons).</li>
-          <li><strong>AWS deploy</strong> — <code>deploy/aws/deploy.sh</code>: EC2 Ubuntu, <code>.env</code> on instance only, systemd <code>team12-api</code> service.</li>
+        <ol style="color:var(--text)">
+          <li>Start here (this page) — deliverables map and links below.</li>
+          <li>Click <strong>Open live demo</strong> — full C02 workflow with real APIs.</li>
+          <li>Read <a href="architecture.html">architecture &amp; construction log</a> — auditable phases, commits, reproduction steps for other teams.</li>
+          <li>Optional: <a href="deck.html">pitch deck</a> (verified screenshots) · <a href="submission.html">rules checklist</a>.</li>
         </ol>
       </div>
     </section>
 
     <section>
-      <h2>Stack (no vapor)</h2>
+      <h2>Deliverables</h2>
       <div class="card">
+        <table>
+          <tr><th>Submission canvas</th><td><a href="https://gilraitses.github.io/team12-2402ndave/cover.html">cover.html</a> (this page)</td></tr>
+          <tr><th>Live demo</th><td><a href="http://3.94.205.179:8787/dashboard/workflow.html" target="_blank" rel="noopener">AWS workflow</a> · <a href="http://3.94.205.179:8787/dashboard/" target="_blank" rel="noopener">AWS dashboard</a></td></tr>
+          <tr><th>Teaching / audit</th><td><a href="architecture.html">architecture.html</a> — phases, commits, file map, reproduction</td></tr>
+          <tr><th>Pitch deck</th><td><a href="deck.html">deck.html</a> (static) · <a href="http://3.94.205.179:8787/deck.html" target="_blank" rel="noopener">live deck</a></td></tr>
+          <tr><th>Rules checklist</th><td><a href="submission.html">submission.html</a></td></tr>
+          <tr><th>Static UI preview</th><td><a href="dashboard/index.html">dashboard</a> · <a href="dashboard/workflow.html">workflow</a> <span style="color:var(--warn)">(static banner — use AWS for live)</span></td></tr>
+          <tr><th>Repository</th><td><a href="https://github.com/GilRaitses/team12-2402ndave">github.com/GilRaitses/team12-2402ndave</a></td></tr>
+          <tr><th>CriticalAsset</th><td><a href="https://2402ndave.stg.criticalasset.com/">2402ndave.stg.criticalasset.com</a></td></tr>
+        </table>
+      </div>
+      <div class="grid-cta">
+        <a class="cta primary" href="http://3.94.205.179:8787/dashboard/workflow.html" target="_blank" rel="noopener">Live workflow</a>
+        <a class="cta" href="architecture.html">Construction log</a>
+        <a class="cta" href="deck.html">Pitch deck</a>
+        <a class="cta" href="submission.html">Full checklist</a>
+        <a class="cta" href="https://github.com/GilRaitses/team12-2402ndave">GitHub</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>What we built</h2>
+      <div class="card">
+        <p style="color:var(--text);margin-bottom:0.75rem">
+          Students sense building failures first. Operators see thin work orders. Our product closes the loop:
+          <strong>signal → AI structure → NYC public evidence → compliance hints → CriticalAsset write-back → student closure verification.</strong>
+        </p>
         <ul>
-          <li>Python 3 · stdlib HTTP server · CriticalAsset GraphQL · OpenAI API · NYC Open Data SODA</li>
-          <li>Vanilla HTML/CSS/JS · Leaflet map · GitHub Pages backup</li>
-          <li>AWS EC2 t3.micro (temporary) · secrets in instance <code>.env</code> · port 8787</li>
-          <li>Not used: MCP server, S3, SQS (not required by brief)</li>
+          <li><strong>C01:</strong> Live WO dashboard, map, portfolio filter, asset joins</li>
+          <li><strong>C02:</strong> 6-step workflow, OpenAI gpt-4o-mini, building-specific 311/HPD, WO copilot, in-browser record/closure</li>
+          <li><strong>Not vapor:</strong> AWS hosts <code>api_server.py</code> with secrets server-side; Pages hosts auditable docs + static preview</li>
         </ul>
       </div>
     </section>
@@ -111,19 +116,5 @@
       </div>
     </section>
   </main>
-  <script>
-    (function () {
-      const host = window.location.hostname;
-      const port = window.location.port || "8787";
-      if (host !== "localhost" && host !== "127.0.0.1" && !host.includes("github.io")) {
-        const base = `${window.location.protocol}//${host}:${port}`;
-        document.querySelectorAll('a[href*="LIVE_HOST"]').forEach((a) => {
-          a.href = a.href.replace("http://LIVE_HOST:8787", base);
-        });
-        const live = document.getElementById("live-url");
-        if (live) { live.href = base + "/cover.html"; live.textContent = base + "/cover.html"; }
-      }
-    })();
-  </script>
 </body>
 </html>

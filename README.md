@@ -27,8 +27,12 @@ python3 -m http.server 8080 --directory .
 # Local secrets (interactive — never committed)
 python3 scripts/setup_env.py
 
-# Live demo server (screenshots + OpenAI)
-python3 backend/api_server.py    # http://127.0.0.1:8787/dashboard/
+# Live demo server (local or AWS)
+API_BIND=0.0.0.0 python3 backend/api_server.py
+
+# Submission: GitHub Pages canvas → links to AWS live demo
+# https://gilraitses.github.io/team12-2402ndave/cover.html
+# Teaching log: docs/architecture.html
 ```
 
 ## Work lanes (O0 cast)
