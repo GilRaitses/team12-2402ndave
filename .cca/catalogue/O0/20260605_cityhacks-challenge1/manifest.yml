@@ -1,0 +1,71 @@
+id: O0_cityhacks_challenge1_team12
+lane: O0
+date: 2026-06-05
+label: Team 12 — 240 2nd Avenue — Student Signal / Work Orders Dashboard
+team: Team 12
+building: "240 2nd Avenue"
+hub: HUB 12
+local_required: true
+cloud_hydration_allowed: true
+write_authority: local_only
+status: active
+purpose: >
+  Orchestrate Challenge 01 (pull work orders, build operator dashboard) and
+  Day-Of Student Signal flow for Team 12. Hydrate CriticalAsset staging data
+  locally, ship GitHub Pages dashboard, and coordinate worker lanes without
+  leaking credentials to the browser or git.
+challenge_urls:
+  challenge1: https://thecityhacksthestate.com/challenge1
+  day_of: https://thecityhacksthestate.com/day-of
+  api_docs: https://thecityhacksthestate.com/api-docs
+  setup: https://thecityhacksthestate.com/setup
+endpoints:
+  api: https://2402ndave.stg.criticalasset.com/api
+  console: https://2402ndave.stg.criticalasset.com/
+scopes_required:
+  - workorders.read
+  - assets.read
+  - locations.read
+scopes_bonus:
+  - workorders.write
+lanes:
+  O1:
+    label: Auth & API proxy
+    owner: A1
+    deliverables:
+      - scripts/auth.py
+      - backend/proxy.py
+      - .env.example
+  O2:
+    label: Data hydration
+    owner: B1
+    deliverables:
+      - scripts/fetch_all.py
+      - data/workorders.json
+      - data/assets.json
+      - data/locations.json
+      - docs/api/schema_snapshot.json
+  O3:
+    label: Dashboard UI
+    owner: C1
+    deliverables:
+      - dashboard/index.html
+      - dashboard/js/app.js
+      - docs/ (GitHub Pages root)
+  O4:
+    label: Bonus — joins, map, student signal
+    owner: D1
+    deliverables:
+      - dashboard/js/bonus.js
+      - scripts/submit_signal.py
+blockers:
+  - id: creds_invalid_20260605
+    status: open
+    note: >
+      applicationClientCredentialsToken returns Invalid client_id or client_secret
+      against staging. API host is reachable; introspection works. Likely needs
+      redemption-code activation or Developer Console app rotation before O2 can pull live data.
+notes:
+  - Never call CriticalAsset from browser; always proxy via backend or pre-hydrate JSON.
+  - Redemption codes are single-use; do not commit them.
+  - Human console creds are for Developer Console only, not GraphQL auth.

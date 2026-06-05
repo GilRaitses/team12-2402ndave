@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>240 2nd Avenue — Work Orders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-data-base="../data">
+  <header>
+    <div>
+      <h1>240 2nd Avenue</h1>
+      <p>Team 12 · Work Orders Dashboard · The City Hacks The State</p>
+    </div>
+    <p>CriticalAsset staging</p>
+  </header>
+  <main>
+    <div id="status" class="status-msg" hidden>Loading…</div>
+    <section class="counters">
+      <div class="counter open"><div class="label">Open</div><div class="value" id="count-open">—</div></div>
+      <div class="counter progress"><div class="label">In Progress</div><div class="value" id="count-progress">—</div></div>
+      <div class="counter overdue"><div class="label">Overdue</div><div class="value" id="count-overdue">—</div></div>
+    </section>
+    <div class="toolbar">
+      <label>Status <select id="filter-status">
+        <option value="all">All</option>
+        <option value="open">Open</option>
+        <option value="progress">In Progress</option>
+        <option value="overdue">Overdue</option>
+      </select></label>
+      <label>Priority <select id="filter-priority">
+        <option value="all">All</option>
+        <option value="critical">Critical</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select></label>
+    </div>
+    <div class="layout">
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Asset</th>
+              <th>Location</th>
+              <th>Due</th>
+            </tr>
+          </thead>
+          <tbody id="wo-body"></tbody>
+        </table>
+      </div>
+      <aside class="panel" id="detail">
+        <p class="empty">Select a work order to view details</p>
+      </aside>
+    </div>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
