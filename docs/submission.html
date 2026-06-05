@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team 12 Submission — 240 2nd Avenue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0f1419; --surface:#1a2332; --border:#2d3a4f; --text:#e8edf4; --muted:#8b9cb3; --accent:#3d9cf5; --ok:#6bcf7f; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"IBM Plex Sans",system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    header { padding:2rem; border-bottom:1px solid var(--border); text-align:center; }
+    header h1 { font-size:1.75rem; }
+    header p { color:var(--muted); margin-top:0.5rem; }
+    main { max-width:900px; margin:0 auto; padding:2rem; }
+    section { margin-bottom:2rem; }
+    h2 { font-size:1.1rem; margin-bottom:0.75rem; color:var(--accent); }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:1.25rem; margin-bottom:1rem; }
+    a { color:var(--accent); }
+    ul { padding-left:1.25rem; }
+    li { margin:0.35rem 0; }
+    .links { display:grid; gap:0.5rem; }
+    .links a { font-weight:500; }
+    .check { color:var(--ok); }
+    table { width:100%; border-collapse:collapse; font-size:0.875rem; }
+    th, td { text-align:left; padding:0.5rem; border-bottom:1px solid var(--border); }
+    th { color:var(--muted); }
+    .cta { display:inline-block; margin-top:1rem; background:var(--accent); color:#fff; padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:600; }
+    .cta:hover { opacity:0.9; }
+    .tag { display:inline-block; font-size:0.7rem; background:rgba(107,207,127,0.2); color:var(--ok); padding:0.15rem 0.5rem; border-radius:4px; text-transform:uppercase; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="tag">Challenge 01 · Submission</p>
+    <h1>Team 12 — 240 2nd Avenue</h1>
+    <p>The City Hacks The State · NYC Tech Week 2026</p>
+  </header>
+  <main>
+    <section>
+      <h2>Live links</h2>
+      <div class="card links">
+        <a href="dashboard/index.html">→ Work Orders Dashboard</a>
+        <a href="https://github.com/GilRaitses/team12-2402ndave" target="_blank" rel="noopener">→ GitHub Repository</a>
+        <a href="https://gilraitses.github.io/team12-2402ndave/dashboard/" target="_blank" rel="noopener">→ GitHub Pages (public)</a>
+        <a href="https://2402ndave.stg.criticalasset.com/" target="_blank" rel="noopener">→ CriticalAsset Console (240 2nd Avenue)</a>
+        <a href="https://thecityhacksthestate.com/challenge1" target="_blank" rel="noopener">→ Challenge 01 Brief</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>What we built</h2>
+      <div class="card">
+        <p>A building-operator dashboard that pulls <strong>live work orders</strong> from the CriticalAsset GraphQL API for <strong>240 2nd Avenue</strong>, joins them to linked assets and locations, and turns facility data into a Monday-morning decision surface.</p>
+        <ul style="margin-top:1rem">
+          <li><span class="check">✓</span> OAuth2 / session auth via server-side scripts (no browser secrets)</li>
+          <li><span class="check">✓</span> Live pull: 3 work orders, 100 assets, full location tree</li>
+          <li><span class="check">✓</span> Counter row: Open · In Progress · Overdue</li>
+          <li><span class="check">✓</span> Filterable table with asset, category, location, due date</li>
+          <li><span class="check">✓</span> Detail panel with full work order + linked assets</li>
+          <li><span class="check">✓</span> Bonus: category grouping, building stats, student signal structurer</li>
+        </ul>
+        <a class="cta" href="dashboard/index.html">Open Dashboard</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data sources</h2>
+      <div class="card">
+        <table>
+          <tr><th>Endpoint</th><th>Scope</th><th>Local artifact</th></tr>
+          <tr><td><code>workOrders</code></td><td>workorders.read</td><td><code>data/workorders.json</code></td></tr>
+          <tr><td><code>assets</code></td><td>assets.read</td><td><code>data/assets.json</code></td></tr>
+          <tr><td><code>locations</code></td><td>locations.read</td><td><code>data/locations.json</code></td></tr>
+          <tr><td><code>locationsTree</code></td><td>locations.read</td><td><code>data/locations_tree.json</code></td></tr>
+        </table>
+        <p style="margin-top:0.75rem;color:var(--muted);font-size:0.875rem">API: <code>https://2402ndave.stg.criticalasset.com/api</code> · Hydrated 2026-06-05 via human session auth (M2M creds pending activation)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Judging alignment (Challenge 01)</h2>
+      <div class="card">
+        <table>
+          <tr><th>Criterion</th><th>Pts</th><th>How we address it</th></tr>
+          <tr><td>Clarity of signal → action</td><td>30</td><td>Student signal panel structures observation → linked WO → next action with confidence labels</td></tr>
+          <tr><td>Working CriticalAsset data pull</td><td>25</td><td>Live GraphQL hydration scripts; 3 WOs + 100 assets from staging</td></tr>
+          <tr><td>Dashboard usability</td><td>20</td><td>Single screen: counters, filters, table, detail panel</td></tr>
+          <tr><td>Bonus: joins, map, student signal</td><td>15</td><td>Asset joins on each WO; building/category stats; signal structurer</td></tr>
+          <tr><td>Demo / storytelling</td><td>10</td><td>3-minute script below</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>3-minute demo script</h2>
+      <div class="card">
+        <p><strong>Minute 1 — Signal:</strong> "Students at 240 2nd Avenue notice steam/HVAC and electrical systems need attention before they become emergencies. Our dashboard surfaces what facilities already knows."</p>
+        <p style="margin-top:0.75rem"><strong>Minute 2 — Product:</strong> Show counter row → filter by HVAC → click Annual Steam System Inspection → detail panel shows linked valve assets. Enter a student signal; show structured output with confidence labels.</p>
+        <p style="margin-top:0.75rem"><strong>Minute 3 — Decision:</strong> "Three open preventive maintenance tickets, two high severity. Next action: schedule steam inspection, attach student observation, flag missing shutoff data in CriticalAsset."</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Repo structure</h2>
+      <div class="card">
+        <ul>
+          <li><code>scripts/auth.py</code> — token exchange (M2M + human fallback)</li>
+          <li><code>scripts/fetch_all.py</code> — hydrate all data sources</li>
+          <li><code>backend/proxy.py</code> — local GraphQL proxy for dev</li>
+          <li><code>dashboard/</code> — operator UI</li>
+          <li><code>.cca/catalogue/O0/</code> — orchestration manifest + lane assignments</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Team</h2>
+      <div class="card">
+        <p><strong>Hub 12</strong> · Building: <strong>240 2nd Avenue</strong></p>
+        <p style="margin-top:0.5rem;color:var(--muted)">Repository: team12-2402ndave · Orchestrator: O0</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

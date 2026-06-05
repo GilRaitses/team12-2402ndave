@@ -1,0 +1,1409 @@
+{
+  "data": {
+    "assets": {
+      "total": 100,
+      "assets": [
+        {
+          "id": "cc4dfd4e-040d-5899-ab25-7731a03b5cb9",
+          "name": "District Steam Service Entrance",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "a9f1efc3-4e39-5725-aea2-5185edc97a77",
+              "locationName": "Steam Meter Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "704a5ebf-a4fb-5c90-a217-c63c723f9211",
+          "name": "Steam Main Isolation Valve",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "a9f1efc3-4e39-5725-aea2-5185edc97a77",
+              "locationName": "Steam Meter Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "5fee9ad8-8a2d-58aa-aa6e-2cb28ab6af5b",
+          "name": "Steam Pressure Reducing Valve Station",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "3b487369-5250-597e-a5bb-f7a1a61b8891",
+              "locationName": "Steam PRV Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "bd2461f6-f9dd-5c6b-a9ec-bcc7a00303fe",
+          "name": "Steam Condensate Return Receiver",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "e691e1cd-8c2f-5a87-a166-a5b6a8b79faa",
+          "name": "Condensate Return Pump Set",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "e51b5b24-85d1-5454-ad52-1412c733a281",
+          "name": "Steam Trap Assembly - Main Drip",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "504b8318-23db-56f6-a3d2-44a5b688f806",
+          "name": "Steam-to-Hot-Water Heat Exchanger",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "cf318ded-af34-500b-a24d-0306fd46bb95",
+          "name": "Heating Hot Water Expansion Tank",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "deb00e1c-487f-5c9e-a034-e32b4b472429",
+          "name": "Heating Hot Water Air Separator",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "2417552f-9056-5344-a6a3-69488b877580",
+          "name": "Heating Hot Water Chemical Pot Feeder",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "ee7d6a14-bc51-5714-af4a-0eaa6ce0bc1b",
+          "name": "Heating Hot Water Return Header",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "028a849e-837f-5b2d-a86b-53a89469f3d5",
+          "name": "Unit Ventilator - Typical Classroom",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "61b09ea7-2fa5-5e43-a4eb-2af5cba714dd",
+              "locationName": "Classroom",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "329d1eec-42dc-5e04-a29f-f9ed57087160",
+          "name": "Classroom Radiator / Heating Coil",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "61b09ea7-2fa5-5e43-a4eb-2af5cba714dd",
+              "locationName": "Classroom",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "bc34974f-63d6-57de-a10a-3b503a87e319",
+          "name": "Air Handling Unit - Auditorium/Gym",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "1a3f8e12-8205-5c53-a792-d632b5bbfef7",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "9c89d8bd-f76b-5039-a826-2b509bda5c85",
+          "name": "Outside Air Intake Louver",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "71f69665-46ac-5b8f-a821-5a5c4dcc8278",
+              "locationName": "Mechanical Intake Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "c242729b-e350-5284-a06c-c3c46cdf51b8",
+          "name": "Exhaust Fan - Toilet Rooms",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7dae4f47-7096-586a-ae45-f77831b19b46",
+              "locationName": "Roof Mechanical Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "9bf5b53b-e403-5122-a619-653d7f387667",
+          "name": "Exhaust Fan - Kitchen/Cafeteria",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7dae4f47-7096-586a-ae45-f77831b19b46",
+              "locationName": "Roof Mechanical Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "f944a567-f08e-54ef-a1ca-fcd8992cf262",
+          "name": "Building Automation Controller - HVAC",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "5b7204b6-1e4e-5043-ae69-580c15cca867",
+              "locationName": "BAS Panel Location",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "239f36cd-c917-5fc4-a24b-e35d4c2e3336",
+          "name": "Domestic Water Service Entrance",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "591e12b4-9de6-5010-a43e-0d6ed306abb9",
+              "locationName": "Water Service Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "d1f5b932-4815-581d-a5ff-bb9f94e770d1",
+          "name": "Domestic Water Meter",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "591e12b4-9de6-5010-a43e-0d6ed306abb9",
+              "locationName": "Water Service Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "e89d76e7-fdda-5d42-a08b-cfb9fdb0d93e",
+          "name": "Domestic Water Main Shutoff Valve",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "591e12b4-9de6-5010-a43e-0d6ed306abb9",
+              "locationName": "Water Service Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "c7ded3eb-6eb4-5094-a27d-1a77e1ba759b",
+          "name": "Reduced Pressure Zone Backflow Preventer",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "591e12b4-9de6-5010-a43e-0d6ed306abb9",
+              "locationName": "Water Service Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "e2ccb2dd-4c60-5b78-ae89-45bd7de26f44",
+          "name": "Domestic Water Pressure Reducing Valve",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "591e12b4-9de6-5010-a43e-0d6ed306abb9",
+              "locationName": "Water Service Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "3be1f18f-8d2b-50d1-a31c-6e32e721ee16",
+          "name": "Domestic Booster Pump Set",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "8ac8816d-fcc9-5aed-a91a-4544480c21f5",
+              "locationName": "Pump Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "e85dea96-ac02-5d7b-a8dd-a82d8f5af7fb",
+          "name": "Domestic Hot Water Riser",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "e41548b0-c29b-56e6-abd2-f0f55d2e7ecc",
+              "locationName": "Pipe Chase",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "48f9c169-9272-5b4d-acba-15a0b0999c60",
+          "name": "IDF Network Rack",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "0bef8537-696f-5066-a1c2-79e27319a60f",
+              "locationName": "IDF Closet",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "039d1c1b-53bc-587f-a838-2736605fcc28",
+          "name": "Condensate Drain Cooler",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "0ea9eb7a-1c96-526e-ad44-6ed0f2b66cf7",
+          "name": "Fan Coil Unit - Administration Area",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "de97f807-3705-5644-abfe-ac909e621ed6",
+              "locationName": "Administration Office",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "12e9ccca-ab27-5846-a976-3751f781449e",
+          "name": "Sanitary Waste Stack",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "e41548b0-c29b-56e6-abd2-f0f55d2e7ecc",
+              "locationName": "Pipe Chase",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "25d2d6fa-2df3-553a-a80c-680eb314b9fb",
+          "name": "Elevator Controller",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "b359dc87-dfd8-5d48-af1d-f3c51d8bb7bf",
+              "locationName": "Elevator Machine Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "0c0486b3-0ae8-5db5-a2c9-9e435027d238",
+          "name": "Elevator Pit Sump Pump",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "90717055-47f7-535b-aef8-4503e15bd820",
+              "locationName": "Elevator Pit",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "61a45bf3-cf18-5634-a2b1-58a8bd0732be",
+          "name": "Motorized Smoke/Fire Damper",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "8bb55367-6ed1-546e-a863-ada6dc9a56f7",
+              "locationName": "Shaft or Corridor Ceiling",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "f45756c0-1c8c-55bf-aa99-8aebd21dc670",
+          "name": "Domestic Hot Water Storage Tank",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "ecc46b93-3fd1-55d3-a215-c173186456e4",
+          "name": "Domestic Hot Water Recirculation Pump",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "c8357cc9-f175-539c-a203-4a361e5027e6",
+          "name": "Emergency Eyewash Mixing Valve",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "b1b14aea-d7e8-58dc-ade2-805ead5c49d7",
+              "locationName": "Science Classroom or Lab",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "0978bdb2-7f76-5624-a8b6-9ce3b6b7486f",
+          "name": "Science Classroom Sink",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "b1b14aea-d7e8-58dc-ade2-805ead5c49d7",
+              "locationName": "Science Classroom or Lab",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "ce0cafd6-4b50-5cfa-a472-05a56efe9cfd",
+          "name": "Gang Toilet Room Fixture Bank",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "e5390fec-1b19-5387-ae86-7ca45fa32a9c",
+              "locationName": "Student Toilet Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "65a3b50b-1f16-54b9-a1d5-f58ea165ca4c",
+          "name": "Staff Toilet Room Fixture Bank",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "d4d10aba-5226-5e53-a606-63e094fa6810",
+              "locationName": "Staff Toilet Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "c5da2727-3c27-5037-af69-b2f3ce6927ec",
+          "name": "Janitor Mop Sink",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "3a3da789-b0b4-5d48-a2fa-f1e765b4f5ca",
+              "locationName": "Janitor Closet",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "a886f7cd-b83f-5501-a2ed-53d6d8e0907a",
+          "name": "Floor Drain - Mechanical Room",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "29faf702-d6a2-5091-a2c0-8db6e135b99f",
+          "name": "Domestic Cold Water Riser",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "e41548b0-c29b-56e6-abd2-f0f55d2e7ecc",
+              "locationName": "Pipe Chase",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "5b76d956-a18f-54bd-a8a6-5980f44583a9",
+          "name": "Floor Drain - Toilet Room",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "e5390fec-1b19-5387-ae86-7ca45fa32a9c",
+              "locationName": "Student Toilet Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "30591245-5f6d-5dc5-abb7-9c7aed6f2405",
+          "name": "Sanitary Vent Stack",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "e41548b0-c29b-56e6-abd2-f0f55d2e7ecc",
+              "locationName": "Pipe Chase",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "32fd1350-8c07-5653-a062-00ece534ea5a",
+          "name": "Storm Drain Roof Leader",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "d77adf1b-f49d-56ee-af1a-9f81c336a0c9",
+              "locationName": "Pipe Chase",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "9d4b7c6e-7c9c-5885-a412-2c174084e0c7",
+          "name": "Roof Drain",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "b482cbb9-75a7-5888-a726-6fc1e1183f33",
+              "locationName": "Roof Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "dbae34d4-178f-5841-ae3d-9520dc234283",
+          "name": "Overflow Roof Drain / Scupper",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "b482cbb9-75a7-5888-a726-6fc1e1183f33",
+              "locationName": "Roof Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "35e47ee6-bf6f-56df-a856-01af5b0b15f7",
+          "name": "Sump Pump - Basement Low Point",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "c165c026-871a-529c-ac26-0ca04c7b7dab",
+              "locationName": "Sump Pit / Low Point",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "d52ec8ba-8cf9-5e8d-af59-9a109afe79e7",
+          "name": "Sewage Ejector Pump",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "f05a702b-1bab-54c8-a510-b004a0feb52b",
+              "locationName": "Ejector Pump Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "af96ab44-dfa0-550d-af48-14fd197554dd",
+          "name": "Domestic Hot Water Heat Exchanger",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "f8d8398e-d81e-59a9-a81a-c01f5d7cf4fd",
+          "name": "Fire Service Entrance",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "0b1dbc53-a645-58db-a5f8-7a5f5f74379a",
+              "locationName": "Fire Pump / Sprinkler Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "1ac1309c-6a6a-5fb6-aa22-d84eacf8e060",
+          "name": "Fire Department Connection",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "c3f18277-743e-5ad9-acce-64fab167bd38",
+              "locationName": "Building Exterior",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "db400d81-6122-5759-a111-21fd16ab477d",
+          "name": "Sprinkler Control Valve Assembly",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "72e3efb2-a0fd-5320-afcf-d0c071b16b7c",
+              "locationName": "Sprinkler Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "488d1e56-4029-5d95-a764-b0a2c864c8ed",
+          "name": "Sprinkler Waterflow Switch",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "72e3efb2-a0fd-5320-afcf-d0c071b16b7c",
+              "locationName": "Sprinkler Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "eff2e97b-575f-589a-a269-5ebf50035ad1",
+          "name": "Sprinkler Tamper Switch",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "72e3efb2-a0fd-5320-afcf-d0c071b16b7c",
+              "locationName": "Sprinkler Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "30540e2a-046d-5612-ace5-1bd9125a7b50",
+          "name": "Standpipe Hose Valve",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "f7e2e339-2ffa-5017-a148-d5c08d62b25d",
+              "locationName": "Stairwell",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "7780b2a1-30e3-534b-a8ac-e1392ab25b27",
+          "name": "Fire Pump Controller",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "5d8e8730-f11e-5482-a681-8287a00115bf",
+              "locationName": "Fire Pump Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "d404c8c6-e595-59fd-a1ab-6c873e82a5f5",
+          "name": "Fire Pump",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "5d8e8730-f11e-5482-a681-8287a00115bf",
+              "locationName": "Fire Pump Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "057a1bc8-5dbc-59d7-a285-bad5c8adc8b1",
+          "name": "Jockey Pump",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "5d8e8730-f11e-5482-a681-8287a00115bf",
+              "locationName": "Fire Pump Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "f1b414c1-ff10-54be-a08c-4f2b09abdcad",
+          "name": "Fire Alarm Control Panel",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "333223aa-c694-5a41-ab9d-cc89353261e9",
+              "locationName": "Main Lobby / Fire Command Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "1e7d1c48-03a1-51a3-a032-feba457ebaee",
+          "name": "Heating Hot Water Circulation Pump 1",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "e3480475-167f-5bff-a47e-961f094ba4be",
+          "name": "Fire Alarm Annunciator",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "333223aa-c694-5a41-ab9d-cc89353261e9",
+              "locationName": "Main Lobby / Fire Command Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "2e6481d9-b7cc-5b65-a415-032bdf253834",
+          "name": "Smoke Detector - Corridor",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "5c24c6e9-7ac7-5e26-abdb-55d5d81d96ac",
+              "locationName": "Corridor",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "418ce37e-31ba-5c0e-ab8c-b11cb61e916d",
+          "name": "Heat Detector - Mechanical Room",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "d8c4a9a0-5aca-554e-ab22-354f8920152b",
+          "name": "Manual Pull Station",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "64891bec-e73f-50af-a227-f00b5b8403b0",
+              "locationName": "Exit Stair Door",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "f55c56a3-b3ab-5f10-a8ca-18df2d366caa",
+          "name": "Horn/Strobe Notification Appliance",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "5c24c6e9-7ac7-5e26-abdb-55d5d81d96ac",
+              "locationName": "Corridor",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "34de4123-c52c-5121-ac26-7c405c467f33",
+          "name": "Emergency Lighting Unit",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "5c24c6e9-7ac7-5e26-abdb-55d5d81d96ac",
+              "locationName": "Corridor",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "365ba24b-ae3f-5d16-a94e-ebf46deca904",
+          "name": "Exit Sign",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "1733677d-fb36-5338-a641-1e0cef3dcddb",
+              "locationName": "Exit Door / Stairwell",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "ee32854c-35da-5949-abe2-12aed55a4388",
+          "name": "Fire Extinguisher Cabinet",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "5c24c6e9-7ac7-5e26-abdb-55d5d81d96ac",
+              "locationName": "Corridor",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "4155cef3-db65-5297-a8c0-2a72e8858588",
+          "name": "Heating Hot Water Circulation Pump 2",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "4d2049ba-a519-5ffe-a805-a020b91ec892",
+          "name": "Heating Hot Water Supply Header",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "4f69711c-4a01-5df8-a7f0-21a1add0e601",
+          "name": "Thermostatic Mixing Valve",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "6a615b1c-cdcd-5a89-af8c-df449a949421",
+          "name": "Standpipe Riser",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "ee077493-0e8d-546b-ac22-acfdfeb35fdf",
+              "locationName": "Stairwell",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "85363cc5-ba24-56e1-ae44-cb57565131d7",
+          "name": "Air Handling Unit - Main",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "1a3f8e12-8205-5c53-a792-d632b5bbfef7",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "805abf2b-e2a0-5229-ab5f-156903b7c29e",
+          "name": "Backflow Preventer Test Ports",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "591e12b4-9de6-5010-a43e-0d6ed306abb9",
+              "locationName": "Water Service Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "8b1202d3-06e9-5624-ab4e-9428e4038b96",
+          "name": "Classroom Sink",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "61b09ea7-2fa5-5e43-a4eb-2af5cba714dd",
+              "locationName": "Classroom",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "92594514-f60a-51b7-a1ee-d6f2bdd371b4",
+          "name": "Exhaust Fan - Custodial/Janitor Closets",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7dae4f47-7096-586a-ae45-f77831b19b46",
+              "locationName": "Roof Mechanical Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "6335b7dc-028c-58f9-aacf-3e19241de876",
+          "name": "Exterior Door Assembly",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "a54f68fa-e1b0-549d-af06-561c383904ac",
+              "locationName": "Main Entrance",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "627bce5f-c058-551c-a583-749d5751b0e9",
+          "name": "Electrical Service Entrance",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "a98b9c43-46fc-5759-aa92-3878fc6ddede",
+              "locationName": "Main Electrical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "ab2236a0-784d-5a3f-a277-6b0dc482274b",
+          "name": "Main Switchboard",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "a98b9c43-46fc-5759-aa92-3878fc6ddede",
+              "locationName": "Main Electrical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "d7fd1cfe-7327-5485-a0d6-6d7129c07e74",
+          "name": "Main Distribution Panel",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "a98b9c43-46fc-5759-aa92-3878fc6ddede",
+              "locationName": "Main Electrical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "c9928aa6-93c1-543f-a55e-62e56ebfbbe9",
+          "name": "Panelboard - Mechanical Equipment",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "e36700f5-26c5-5200-ab38-e0c8ccc265f6",
+          "name": "Duct Smoke Detector - Main AHU",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "1a3f8e12-8205-5c53-a792-d632b5bbfef7",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "34b8eab5-e259-5b51-a7ea-383e367b7393",
+          "name": "Steam Utility Meter",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "a9f1efc3-4e39-5725-aea2-5185edc97a77",
+              "locationName": "Steam Meter Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "3d8271ea-f564-5226-a7d3-2007e2420c27",
+          "name": "Steam Safety Relief Valve",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "3b487369-5250-597e-a5bb-f7a1a61b8891",
+              "locationName": "Steam PRV Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "82258284-560a-5d0a-afee-86046c53b508",
+          "name": "Lighting Control Panel",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "cca9c4ea-d4d3-5362-afc7-21a90db87ac8",
+              "locationName": "Electrical Closet",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "ca513bb2-050e-51da-a9e3-f071f788780d",
+          "name": "Emergency Power Panel",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "18380323-a3ae-5cc5-af03-be51855bcc04",
+              "locationName": "Electrical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "999c159b-ce5b-5e59-a2f7-cabc6d1b1b38",
+          "name": "Automatic Transfer Switch",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "18380323-a3ae-5cc5-af03-be51855bcc04",
+              "locationName": "Electrical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "a1e43e3e-7857-56ef-a831-e38d61de6118",
+          "name": "Steam Trap Assembly - Heat Exchanger",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+              "locationName": "Mechanical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "16d599a8-cb74-5fcd-a614-302515e0007e",
+          "name": "Utility Electric Meter",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "a98b9c43-46fc-5759-aa92-3878fc6ddede",
+              "locationName": "Main Electrical Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "4d41cadd-abc2-5f1a-abc3-6d2607b014ea",
+          "name": "Panelboard - Classroom Floor",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "cca9c4ea-d4d3-5362-afc7-21a90db87ac8",
+              "locationName": "Electrical Closet",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "b810603f-71e2-5f01-ab4b-4b60de8bf96d",
+          "name": "UPS - IT Network",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "0bef8537-696f-5066-a1c2-79e27319a60f",
+              "locationName": "IDF Closet",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "ef36ebcf-dda4-5684-a84b-1f08cef542e7",
+          "name": "MDF Network Rack",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "f711ebd3-0506-5f8f-ace6-f84d2df31cd8",
+              "locationName": "MDF Room",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "a96acf6f-7772-5433-a26f-6916fb6b8d94",
+          "name": "Security Camera Headend / NVR",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "f24739a7-70ff-53f9-a323-45678489d1a8",
+              "locationName": "Security Office / MDF",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "9f2a7d72-744f-524f-ab97-a6faca6ca7fd",
+          "name": "Access Control Panel",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "68f228df-d24c-5489-a1a5-eee12588f82b",
+              "locationName": "Security Office / Electrical Closet",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "880ca372-04be-58c9-a473-088af5e6ce02",
+          "name": "Public Address Headend",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "c2f55366-921b-568a-a4fb-57c0410caed9",
+              "locationName": "Main Office / PA Closet",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "b3d51eb6-da6d-56f4-ab81-dd25cf437396",
+          "name": "Clock / Bell System Controller",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "c2f55366-921b-568a-a4fb-57c0410caed9",
+              "locationName": "Main Office / PA Closet",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "38eb1c16-013f-5e17-ad30-bcf922488ace",
+          "name": "Roof Access Hatch",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "252ea026-44cc-5f24-afa9-1dbb7b65fb6b",
+              "locationName": "Roof Access Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "78b19d3e-df4c-5ac5-aabe-f35ae90a636e",
+          "name": "Roof Membrane Assembly",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "b482cbb9-75a7-5888-a726-6fc1e1183f33",
+              "locationName": "Roof Area",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "6ea2af9f-d14e-5570-a386-512f5d535891",
+          "name": "Parapet / Coping Assembly",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "91f23de3-729d-5266-a046-92dc963641f8",
+              "locationName": "Roof Perimeter",
+              "address": null
+            }
+          ]
+        },
+        {
+          "id": "acba4551-1338-5105-ac71-6349c63739af",
+          "name": "Exterior Window Assembly",
+          "status": "active",
+          "serialNumber": null,
+          "installationDate": "1263081600000",
+          "locations": [
+            {
+              "id": "61b09ea7-2fa5-5e43-a4eb-2af5cba714dd",
+              "locationName": "Classroom",
+              "address": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

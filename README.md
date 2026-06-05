@@ -16,8 +16,9 @@
 cp .env.example .env
 # Edit .env with Client ID + Secret from credential sheet (never commit)
 
-python3 scripts/auth.py          # exchange token
+python3 scripts/auth.py          # M2M token, or human session fallback
 python3 scripts/fetch_all.py     # hydrate data/*.json
+./scripts/sync_pages.sh          # copy to docs/ for GitHub Pages
 
 # Local dashboard (open dashboard/index.html or serve docs/)
 python3 -m http.server 8080 --directory .

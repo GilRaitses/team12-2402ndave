@@ -60,11 +60,12 @@ lanes:
       - scripts/submit_signal.py
 blockers:
   - id: creds_invalid_20260605
-    status: open
+    status: mitigated
     note: >
-      applicationClientCredentialsToken returns Invalid client_id or client_secret
-      against staging. API host is reachable; introspection works. Likely needs
-      redemption-code activation or Developer Console app rotation before O2 can pull live data.
+      M2M client_id/secret still invalid on staging. O1 uses human session login
+      fallback in scripts/auth.py; live data hydrated 2026-06-05. Rotate M2M when
+      volunteer activates printed credentials.
+status: complete
 notes:
   - Never call CriticalAsset from browser; always proxy via backend or pre-hydrate JSON.
   - Redemption codes are single-use; do not commit them.

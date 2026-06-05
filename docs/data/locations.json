@@ -1,0 +1,17 @@
+{
+  "data": {
+    "locations": [
+      {
+        "id": "31c0375d-326a-59f1-aa3f-93cf05def576",
+        "locationName": "240 2nd Avenue",
+        "address": "240 2nd Avenue",
+        "city": "",
+        "state": "",
+        "zipcode": "",
+        "parentId": null,
+        "locationType": "fe49b58a-a6cd-47af-b5d3-8e89908a3900",
+        "locationTypeName": "Site"
+      }
+    ]
+  }
+}

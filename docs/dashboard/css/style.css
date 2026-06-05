@@ -139,3 +139,60 @@ tbody tr.selected { background: rgba(61, 156, 245, 0.15); }
 }
 
 .status-msg.error { background: rgba(231, 76, 60, 0.1); border-color: var(--overdue); }
+
+.bonus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.muted { color: var(--muted); font-size: 0.875rem; }
+.cat-row { display: flex; justify-content: space-between; padding: 0.35rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+.cat-count { font-weight: 600; color: var(--accent); }
+
+.signal-panel textarea {
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.signal-panel button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signal-output { margin-top: 1rem; font-size: 0.875rem; }
+.signal-output dl { margin-top: 0.5rem; }
+.label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  background: rgba(61, 156, 245, 0.2);
+  color: var(--accent);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  margin-left: 0.25rem;
+}
+.signal-json {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  overflow-x: auto;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+header a { text-decoration: none; }
+header a:hover { text-decoration: underline; }

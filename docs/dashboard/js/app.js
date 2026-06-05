@@ -1,23 +1,42 @@
 const DATA_BASE = document.body.dataset.dataBase || "../data";
 
 let workOrders = [];
+let assets = [];
+let locationsTree = [];
+
+async function loadJson(path) {
+  const res = await fetch(`${DATA_BASE}/${path}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${path}`);
+  return res.json();
+}
 
 async function loadData() {
   const status = document.getElementById("status");
   try {
-    const res = await fetch(`${DATA_BASE}/workorders.json`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const json = await res.json();
-    if (json.errors) throw new Error(json.errors[0]?.message || "GraphQL error");
-    workOrders = json.data?.workOrders?.nodes || [];
+    const [wo, ast, tree] = await Promise.all([
+      loadJson("workorders.json"),
+      loadJson("assets.json").catch(() => ({ data: { assets: { assets: [] } } })),
+      loadJson("locations_tree.json").catch(() => ({ data: { locationsTree: [] } })),
+    ]);
+    if (wo.errors) throw new Error(wo.errors[0]?.message || "GraphQL error");
+    workOrders = wo.data?.workOrders?.nodes || [];
+    assets = ast.data?.assets?.assets || [];
+    locationsTree = tree.data?.locationsTree || [];
     status.hidden = true;
     render();
+    if (window.renderBonus) window.renderBonus(workOrders, assets, locationsTree);
   } catch (err) {
     status.className = "status-msg error";
     status.hidden = false;
-    status.textContent =
-      `No hydrated data yet (${err.message}). Run: python scripts/fetch_all.py`;
+    status.textContent = `Data load failed (${err.message}). Run: python scripts/fetch_all.py`;
   }
+}
+
+function parseDate(v) {
+  if (!v) return null;
+  const n = Number(v);
+  const d = Number.isFinite(n) ? new Date(n) : new Date(v);
+  return Number.isNaN(d.getTime()) ? null : d;
 }
 
 function stageName(wo) {
@@ -25,40 +44,49 @@ function stageName(wo) {
 }
 
 function isOverdue(wo) {
-  if (!wo.endDate) return false;
-  return new Date(wo.endDate) < new Date() && !/complete|closed|resolved/i.test(stageName(wo));
+  const due = parseDate(wo.endDate);
+  if (!due) return false;
+  return due < new Date() && !/complete|closed|resolved|done/i.test(stageName(wo));
 }
 
 function isOpen(wo) {
   const s = stageName(wo).toLowerCase();
-  return /open|new|pending|queued/.test(s);
+  return /open|new|pending|queued|to do|todo/.test(s);
 }
 
 function isInProgress(wo) {
   const s = stageName(wo).toLowerCase();
-  return /progress|active|assigned|in.?flight/.test(s);
+  return /progress|active|assigned|in.?flight|in progress/.test(s);
 }
 
 function filtered() {
   const status = document.getElementById("filter-status").value;
   const priority = document.getElementById("filter-priority").value;
+  const category = document.getElementById("filter-category")?.value || "all";
   return workOrders.filter((wo) => {
     if (status === "open" && !isOpen(wo)) return false;
     if (status === "progress" && !isInProgress(wo)) return false;
     if (status === "overdue" && !isOverdue(wo)) return false;
     if (priority !== "all" && (wo.severity || "").toLowerCase() !== priority) return false;
+    if (category !== "all" && (wo.workOrderServiceCategory || "other") !== category) return false;
     return true;
   });
 }
 
-function renderCounters(rows) {
+function renderCounters() {
   document.getElementById("count-open").textContent = workOrders.filter(isOpen).length;
   document.getElementById("count-progress").textContent = workOrders.filter(isInProgress).length;
   document.getElementById("count-overdue").textContent = workOrders.filter(isOverdue).length;
+  document.getElementById("count-total").textContent = workOrders.length;
 }
 
 function severityClass(s) {
   return (s || "medium").toLowerCase();
+}
+
+function formatDate(v) {
+  const d = parseDate(v);
+  return d ? d.toLocaleDateString() : "—";
 }
 
 function renderTable(rows) {
@@ -71,8 +99,9 @@ function renderTable(rows) {
       <td>${escapeHtml(stageName(wo))}</td>
       <td><span class="badge ${severityClass(wo.severity)}">${wo.severity || "—"}</span></td>
       <td>${escapeHtml(wo.asset?.name || "—")}</td>
+      <td>${escapeHtml(wo.workOrderServiceCategory || "—")}</td>
       <td>${escapeHtml(wo.location?.locationName || wo.locationAddress || "—")}</td>
-      <td>${wo.endDate ? new Date(wo.endDate).toLocaleDateString() : "—"}</td>
+      <td>${formatDate(wo.endDate)}</td>
     </tr>`
     )
     .join("");
@@ -92,6 +121,7 @@ function selectRow(id) {
     panel.innerHTML = '<p class="empty">Select a work order</p>';
     return;
   }
+  const linkedAssets = (wo.workOrderAssets || []).map((a) => a.asset?.name).filter(Boolean);
   panel.innerHTML = `
     <h2>${escapeHtml(wo.title)}</h2>
     <dl>
@@ -99,10 +129,12 @@ function selectRow(id) {
       <dt>Stage</dt><dd>${escapeHtml(stageName(wo))}</dd>
       <dt>Severity</dt><dd>${escapeHtml(wo.severity || "—")}</dd>
       <dt>Priority</dt><dd>${escapeHtml(String(wo.executionPriority ?? "—"))}</dd>
-      <dt>Due</dt><dd>${wo.endDate ? new Date(wo.endDate).toLocaleString() : "—"}</dd>
-      <dt>Asset</dt><dd>${escapeHtml(wo.asset?.name || "—")} (${escapeHtml(wo.asset?.status || "")})</dd>
+      <dt>Category</dt><dd>${escapeHtml(wo.workOrderServiceCategory || "—")}</dd>
+      <dt>Type</dt><dd>${escapeHtml(wo.workOrderType || "—")}</dd>
+      <dt>Due</dt><dd>${formatDate(wo.endDate)}</dd>
+      <dt>Primary asset</dt><dd>${escapeHtml(wo.asset?.name || "—")}</dd>
+      <dt>All assets</dt><dd>${linkedAssets.map(escapeHtml).join(", ") || "—"}</dd>
       <dt>Location</dt><dd>${escapeHtml(wo.location?.locationName || wo.locationAddress || "—")}</dd>
-      <dt>Assignees</dt><dd>${(wo.assignees || []).map((a) => escapeHtml(a.name)).join(", ") || "—"}</dd>
     </dl>`;
 }
 
@@ -114,13 +146,28 @@ function escapeHtml(s) {
     .replace(/"/g, "&quot;");
 }
 
+function populateCategoryFilter() {
+  const sel = document.getElementById("filter-category");
+  if (!sel) return;
+  const cats = [...new Set(workOrders.map((w) => w.workOrderServiceCategory).filter(Boolean))].sort();
+  cats.forEach((c) => {
+    const o = document.createElement("option");
+    o.value = c;
+    o.textContent = c;
+    sel.appendChild(o);
+  });
+}
+
 function render() {
+  populateCategoryFilter();
   const rows = filtered();
-  renderCounters(rows);
+  renderCounters();
   renderTable(rows);
 }
 
-document.getElementById("filter-status").addEventListener("change", render);
-document.getElementById("filter-priority").addEventListener("change", render);
+["filter-status", "filter-priority", "filter-category"].forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener("change", render);
+});
 
 loadData();

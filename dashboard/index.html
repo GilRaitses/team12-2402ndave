@@ -12,13 +12,14 @@
   <header>
     <div>
       <h1>240 2nd Avenue</h1>
-      <p>Team 12 · Work Orders Dashboard · The City Hacks The State</p>
+      <p>Team 12 · Work Orders Dashboard · <a href="../submission.html" style="color:#3d9cf5">Submission</a></p>
     </div>
-    <p>CriticalAsset staging</p>
+    <p>CriticalAsset · live data</p>
   </header>
   <main>
     <div id="status" class="status-msg" hidden>Loading…</div>
     <section class="counters">
+      <div class="counter"><div class="label">Total</div><div class="value" id="count-total">—</div></div>
       <div class="counter open"><div class="label">Open</div><div class="value" id="count-open">—</div></div>
       <div class="counter progress"><div class="label">In Progress</div><div class="value" id="count-progress">—</div></div>
       <div class="counter overdue"><div class="label">Overdue</div><div class="value" id="count-overdue">—</div></div>
@@ -37,6 +38,9 @@
         <option value="medium">Medium</option>
         <option value="low">Low</option>
       </select></label>
+      <label>Category <select id="filter-category">
+        <option value="all">All</option>
+      </select></label>
     </div>
     <div class="layout">
       <div>
@@ -47,6 +51,7 @@
               <th>Status</th>
               <th>Priority</th>
               <th>Asset</th>
+              <th>Category</th>
               <th>Location</th>
               <th>Due</th>
             </tr>
@@ -58,7 +63,28 @@
         <p class="empty">Select a work order to view details</p>
       </aside>
     </div>
+
+    <section class="bonus-grid">
+      <div class="panel">
+        <h2>By service category</h2>
+        <div id="category-stats"></div>
+      </div>
+      <div class="panel">
+        <h2>Buildings · open work orders</h2>
+        <div id="building-stats"></div>
+      </div>
+      <div class="panel signal-panel">
+        <h2>Student signal</h2>
+        <p class="muted">One sentence from lived experience → structured action</p>
+        <form id="signal-form">
+          <textarea id="signal-text" rows="3" placeholder="The third-floor bathroom has been closed for two weeks. There is water near the sink."></textarea>
+          <button type="submit">Structure signal</button>
+        </form>
+        <div id="signal-output" class="signal-output" hidden></div>
+      </div>
+    </section>
   </main>
   <script src="js/app.js"></script>
+  <script src="js/bonus.js"></script>
 </body>
 </html>

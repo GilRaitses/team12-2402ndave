@@ -1,0 +1,1460 @@
+{
+  "data": {
+    "locationsTree": [
+      {
+        "id": "31c0375d-326a-59f1-aa3f-93cf05def576",
+        "locationName": "240 2nd Avenue",
+        "description": "240 2nd Avenue \u2014 1 building (Building), 7 floors total, 100 assets. Located at 240 2nd Ave, New York, NY 10003, USA.",
+        "locationType": "fe49b58a-a6cd-47af-b5d3-8e89908a3900",
+        "locationTypeName": "Site",
+        "address": "240 2nd Avenue",
+        "city": "",
+        "state": "",
+        "zipcode": "",
+        "country": "",
+        "coordinates": "(40.7326568,-73.9844033)",
+        "parentId": null,
+        "metadata": {
+          "mapsLink": "https://maps.app.goo.gl/fEHMKfo3h5bAGVsBA"
+        },
+        "aliasNames": [],
+        "createdAt": "2026-06-02T12:03:55.700Z",
+        "updatedAt": "2026-06-03T08:16:02.791Z",
+        "deletedAt": null,
+        "fileIds": [],
+        "sublocation": [
+          {
+            "id": "c088f96b-381c-5458-a4da-e8664689f469",
+            "locationName": "M661",
+            "description": "",
+            "locationType": "a9421584-f736-4c8f-870f-44a0bebd24f8",
+            "locationTypeName": "Building",
+            "address": null,
+            "city": null,
+            "state": null,
+            "zipcode": null,
+            "country": null,
+            "coordinates": "(40.73266140014943,-73.98427342552363)",
+            "parentId": "31c0375d-326a-59f1-aa3f-93cf05def576",
+            "metadata": {
+              "form": "box",
+              "color": "#4361ee",
+              "facade": "glass-curtain",
+              "floors": 7,
+              "render": {
+                "form": "box",
+                "color": "#4361ee",
+                "facade": "glass-curtain",
+                "opacity": 1
+              },
+              "opacity": 1,
+              "polygon": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -73.9841440347258,
+                      40.7327332363034
+                    ],
+                    [
+                      -73.9841140837334,
+                      40.7327740787121
+                    ],
+                    [
+                      -73.984321767764,
+                      40.7328586029817
+                    ],
+                    [
+                      -73.9845235331226,
+                      40.7325735455717
+                    ],
+                    [
+                      -73.984504881045,
+                      40.7325663738435
+                    ],
+                    [
+                      -73.9843090341209,
+                      40.7324910704738
+                    ],
+                    [
+                      -73.9842328115918,
+                      40.732604975929
+                    ],
+                    [
+                      -73.9842713712279,
+                      40.7326199501007
+                    ],
+                    [
+                      -73.9842396267839,
+                      40.7326671739435
+                    ],
+                    [
+                      -73.9842025019189,
+                      40.7326531574809
+                    ],
+                    [
+                      -73.9841440347258,
+                      40.7327332363034
+                    ]
+                  ]
+                ]
+              },
+              "geometry": {
+                "polygon": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        -9e-05,
+                        -6.7e-05
+                      ],
+                      [
+                        9e-05,
+                        -6.7e-05
+                      ],
+                      [
+                        9e-05,
+                        6.7e-05
+                      ],
+                      [
+                        -9e-05,
+                        6.7e-05
+                      ],
+                      [
+                        -9e-05,
+                        -6.7e-05
+                      ]
+                    ]
+                  ]
+                }
+              },
+              "transform": {
+                "scale": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "position": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              },
+              "yearBuilt": "",
+              "buildingType": "Building",
+              "squareFootage": 7444,
+              "floorTypesByIndex": {
+                "0": "GROUND_FLOOR",
+                "3": "NORMAL_FLOOR",
+                "6": "NORMAL_FLOOR",
+                "9": "NORMAL_FLOOR",
+                "13": "NORMAL_FLOOR",
+                "14": "NORMAL_FLOOR"
+              }
+            },
+            "aliasNames": [],
+            "createdAt": "2026-06-02T12:03:55.700Z",
+            "updatedAt": "2026-06-03T08:16:02.296Z",
+            "deletedAt": null,
+            "fileIds": [],
+            "sublocation": [
+              {
+                "id": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                "locationName": "Basement",
+                "description": null,
+                "locationType": "9b5079a2-5e1c-47ba-b5a9-6c3a45f32f1c",
+                "locationTypeName": "Floor",
+                "address": null,
+                "city": null,
+                "state": null,
+                "zipcode": null,
+                "country": null,
+                "coordinates": null,
+                "parentId": "c088f96b-381c-5458-a4da-e8664689f469",
+                "metadata": {
+                  "polygon": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ]
+                      ]
+                    ]
+                  },
+                  "floorType": "GROUND_FLOOR",
+                  "floorIndex": 0
+                },
+                "aliasNames": [],
+                "createdAt": "2026-06-02T12:03:55.700Z",
+                "updatedAt": "2026-06-03T08:15:28.399Z",
+                "deletedAt": null,
+                "fileIds": [],
+                "sublocation": [
+                  {
+                    "id": "90717055-47f7-535b-aef8-4503e15bd820",
+                    "locationName": "Elevator Pit",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "591e12b4-9de6-5010-a43e-0d6ed306abb9",
+                    "locationName": "Water Service Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "8ac8816d-fcc9-5aed-a91a-4544480c21f5",
+                    "locationName": "Pump Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "c165c026-871a-529c-ac26-0ca04c7b7dab",
+                    "locationName": "Sump Pit / Low Point",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "f05a702b-1bab-54c8-a510-b004a0feb52b",
+                    "locationName": "Ejector Pump Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "0b1dbc53-a645-58db-a5f8-7a5f5f74379a",
+                    "locationName": "Fire Pump / Sprinkler Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "72e3efb2-a0fd-5320-afcf-d0c071b16b7c",
+                    "locationName": "Sprinkler Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "5d8e8730-f11e-5482-a681-8287a00115bf",
+                    "locationName": "Fire Pump Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "a98b9c43-46fc-5759-aa92-3878fc6ddede",
+                    "locationName": "Main Electrical Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "18380323-a3ae-5cc5-af03-be51855bcc04",
+                    "locationName": "Electrical Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "a9f1efc3-4e39-5725-aea2-5185edc97a77",
+                    "locationName": "Steam Meter Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "3b487369-5250-597e-a5bb-f7a1a61b8891",
+                    "locationName": "Steam PRV Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "7a367a47-d3da-5113-a0eb-65e66e6a7b75",
+                    "locationName": "Mechanical Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "5b7204b6-1e4e-5043-ae69-580c15cca867",
+                    "locationName": "BAS Panel Location",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-03T06:54:18.782Z",
+                    "updatedAt": "2026-06-03T06:54:18.782Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "b359dc87-dfd8-5d48-af1d-f3c51d8bb7bf",
+                    "locationName": "Elevator Machine Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "d6ca7c6c-c1eb-5f74-a3be-0e35d61d27df",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-03T06:54:18.782Z",
+                    "updatedAt": "2026-06-03T06:54:18.782Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  }
+                ]
+              },
+              {
+                "id": "ae70ec89-99b8-5b47-a639-7cc06533f940",
+                "locationName": "Roof",
+                "description": null,
+                "locationType": "9b5079a2-5e1c-47ba-b5a9-6c3a45f32f1c",
+                "locationTypeName": "Floor",
+                "address": null,
+                "city": null,
+                "state": null,
+                "zipcode": null,
+                "country": null,
+                "coordinates": null,
+                "parentId": "c088f96b-381c-5458-a4da-e8664689f469",
+                "metadata": {
+                  "polygon": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ]
+                      ]
+                    ]
+                  },
+                  "floorType": "NORMAL_FLOOR",
+                  "floorIndex": 6
+                },
+                "aliasNames": [],
+                "createdAt": "2026-06-02T12:03:55.700Z",
+                "updatedAt": "2026-06-03T08:15:28.564Z",
+                "deletedAt": null,
+                "fileIds": [],
+                "sublocation": [
+                  {
+                    "id": "91f23de3-729d-5266-a046-92dc963641f8",
+                    "locationName": "Roof Perimeter",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "ae70ec89-99b8-5b47-a639-7cc06533f940",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "252ea026-44cc-5f24-afa9-1dbb7b65fb6b",
+                    "locationName": "Roof Access Area",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "ae70ec89-99b8-5b47-a639-7cc06533f940",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "7dae4f47-7096-586a-ae45-f77831b19b46",
+                    "locationName": "Roof Mechanical Area",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "ae70ec89-99b8-5b47-a639-7cc06533f940",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "b482cbb9-75a7-5888-a726-6fc1e1183f33",
+                    "locationName": "Roof Area",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "ae70ec89-99b8-5b47-a639-7cc06533f940",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "71f69665-46ac-5b8f-a821-5a5c4dcc8278",
+                    "locationName": "Mechanical Intake Area",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "ae70ec89-99b8-5b47-a639-7cc06533f940",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-03T06:54:18.782Z",
+                    "updatedAt": "2026-06-03T06:54:18.782Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "d77adf1b-f49d-56ee-af1a-9f81c336a0c9",
+                    "locationName": "Pipe Chase",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "ae70ec89-99b8-5b47-a639-7cc06533f940",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-03T06:54:18.782Z",
+                    "updatedAt": "2026-06-03T06:54:18.782Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  }
+                ]
+              },
+              {
+                "id": "4b3da63e-64d2-5a19-ae1a-7207e2bf871a",
+                "locationName": "Main Office",
+                "description": null,
+                "locationType": "9b5079a2-5e1c-47ba-b5a9-6c3a45f32f1c",
+                "locationTypeName": "Floor",
+                "address": null,
+                "city": null,
+                "state": null,
+                "zipcode": null,
+                "country": null,
+                "coordinates": null,
+                "parentId": "c088f96b-381c-5458-a4da-e8664689f469",
+                "metadata": {
+                  "polygon": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ]
+                      ]
+                    ]
+                  },
+                  "floorType": "NORMAL_FLOOR",
+                  "floorIndex": 2
+                },
+                "aliasNames": [],
+                "createdAt": "2026-06-02T12:03:55.700Z",
+                "updatedAt": "2026-06-03T08:15:28.553Z",
+                "deletedAt": null,
+                "fileIds": [],
+                "sublocation": [
+                  {
+                    "id": "c2f55366-921b-568a-a4fb-57c0410caed9",
+                    "locationName": "Main Office / PA Closet",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "4b3da63e-64d2-5a19-ae1a-7207e2bf871a",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  }
+                ]
+              },
+              {
+                "id": "a70be4ba-7e5a-5065-a369-3fc03aa85a2c",
+                "locationName": "Ground Floor",
+                "description": null,
+                "locationType": "9b5079a2-5e1c-47ba-b5a9-6c3a45f32f1c",
+                "locationTypeName": "Floor",
+                "address": null,
+                "city": null,
+                "state": null,
+                "zipcode": null,
+                "country": null,
+                "coordinates": null,
+                "parentId": "c088f96b-381c-5458-a4da-e8664689f469",
+                "metadata": {
+                  "polygon": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ]
+                      ]
+                    ]
+                  },
+                  "floorType": "NORMAL_FLOOR",
+                  "floorIndex": 1
+                },
+                "aliasNames": [],
+                "createdAt": "2026-06-02T12:03:55.700Z",
+                "updatedAt": "2026-06-03T08:15:28.562Z",
+                "deletedAt": null,
+                "fileIds": [],
+                "sublocation": [
+                  {
+                    "id": "68f228df-d24c-5489-a1a5-eee12588f82b",
+                    "locationName": "Security Office / Electrical Closet",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "a70be4ba-7e5a-5065-a369-3fc03aa85a2c",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "333223aa-c694-5a41-ab9d-cc89353261e9",
+                    "locationName": "Main Lobby / Fire Command Area",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "a70be4ba-7e5a-5065-a369-3fc03aa85a2c",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "a54f68fa-e1b0-549d-af06-561c383904ac",
+                    "locationName": "Main Entrance",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "a70be4ba-7e5a-5065-a369-3fc03aa85a2c",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "f711ebd3-0506-5f8f-ace6-f84d2df31cd8",
+                    "locationName": "MDF Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "a70be4ba-7e5a-5065-a369-3fc03aa85a2c",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-03T06:54:18.782Z",
+                    "updatedAt": "2026-06-03T06:54:18.782Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "c3f18277-743e-5ad9-acce-64fab167bd38",
+                    "locationName": "Building Exterior",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "a70be4ba-7e5a-5065-a369-3fc03aa85a2c",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-03T06:54:18.782Z",
+                    "updatedAt": "2026-06-03T06:54:18.782Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "f24739a7-70ff-53f9-a323-45678489d1a8",
+                    "locationName": "Security Office / MDF",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "a70be4ba-7e5a-5065-a369-3fc03aa85a2c",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-03T06:54:18.782Z",
+                    "updatedAt": "2026-06-03T06:54:18.782Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  }
+                ]
+              },
+              {
+                "id": "4373ec00-8b9c-5340-a30f-550f0aafb573",
+                "locationName": "Stairwell",
+                "description": null,
+                "locationType": "9b5079a2-5e1c-47ba-b5a9-6c3a45f32f1c",
+                "locationTypeName": "Floor",
+                "address": null,
+                "city": null,
+                "state": null,
+                "zipcode": null,
+                "country": null,
+                "coordinates": null,
+                "parentId": "c088f96b-381c-5458-a4da-e8664689f469",
+                "metadata": {
+                  "polygon": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ]
+                      ]
+                    ]
+                  },
+                  "floorType": "NORMAL_FLOOR",
+                  "floorIndex": 3
+                },
+                "aliasNames": [],
+                "createdAt": "2026-06-02T12:03:55.700Z",
+                "updatedAt": "2026-06-03T08:15:28.572Z",
+                "deletedAt": null,
+                "fileIds": [],
+                "sublocation": [
+                  {
+                    "id": "ee077493-0e8d-546b-ac22-acfdfeb35fdf",
+                    "locationName": "Stairwell",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "4373ec00-8b9c-5340-a30f-550f0aafb573",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  }
+                ]
+              },
+              {
+                "id": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                "locationName": "Typical Floor",
+                "description": null,
+                "locationType": "9b5079a2-5e1c-47ba-b5a9-6c3a45f32f1c",
+                "locationTypeName": "Floor",
+                "address": null,
+                "city": null,
+                "state": null,
+                "zipcode": null,
+                "country": null,
+                "coordinates": null,
+                "parentId": "c088f96b-381c-5458-a4da-e8664689f469",
+                "metadata": {
+                  "polygon": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ]
+                      ]
+                    ]
+                  },
+                  "floorType": "NORMAL_FLOOR",
+                  "floorIndex": 4
+                },
+                "aliasNames": [],
+                "createdAt": "2026-06-02T12:03:55.700Z",
+                "updatedAt": "2026-06-03T08:15:28.615Z",
+                "deletedAt": null,
+                "fileIds": [],
+                "sublocation": [
+                  {
+                    "id": "61b09ea7-2fa5-5e43-a4eb-2af5cba714dd",
+                    "locationName": "Classroom",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "de97f807-3705-5644-abfe-ac909e621ed6",
+                    "locationName": "Administration Office",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "8bb55367-6ed1-546e-a863-ada6dc9a56f7",
+                    "locationName": "Shaft or Corridor Ceiling",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "e41548b0-c29b-56e6-abd2-f0f55d2e7ecc",
+                    "locationName": "Pipe Chase",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "b1b14aea-d7e8-58dc-ade2-805ead5c49d7",
+                    "locationName": "Science Classroom or Lab",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "e5390fec-1b19-5387-ae86-7ca45fa32a9c",
+                    "locationName": "Student Toilet Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "d4d10aba-5226-5e53-a606-63e094fa6810",
+                    "locationName": "Staff Toilet Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "3a3da789-b0b4-5d48-a2fa-f1e765b4f5ca",
+                    "locationName": "Janitor Closet",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "f7e2e339-2ffa-5017-a148-d5c08d62b25d",
+                    "locationName": "Stairwell",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "5c24c6e9-7ac7-5e26-abdb-55d5d81d96ac",
+                    "locationName": "Corridor",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "64891bec-e73f-50af-a227-f00b5b8403b0",
+                    "locationName": "Exit Stair Door",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "1733677d-fb36-5338-a641-1e0cef3dcddb",
+                    "locationName": "Exit Door / Stairwell",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "cca9c4ea-d4d3-5362-afc7-21a90db87ac8",
+                    "locationName": "Electrical Closet",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  },
+                  {
+                    "id": "0bef8537-696f-5066-a1c2-79e27319a60f",
+                    "locationName": "IDF Closet",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "56ecbbe0-ffea-5c91-a4ce-c34c1d462dab",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-02T12:03:55.700Z",
+                    "updatedAt": "2026-06-02T12:03:55.700Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  }
+                ]
+              },
+              {
+                "id": "25296531-f926-5903-a985-159a2867124f",
+                "locationName": "Mechanical Floor",
+                "description": null,
+                "locationType": "9b5079a2-5e1c-47ba-b5a9-6c3a45f32f1c",
+                "locationTypeName": "Floor",
+                "address": null,
+                "city": null,
+                "state": null,
+                "zipcode": null,
+                "country": null,
+                "coordinates": null,
+                "parentId": "c088f96b-381c-5458-a4da-e8664689f469",
+                "metadata": {
+                  "polygon": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          -6.7e-05
+                        ],
+                        [
+                          9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          6.7e-05
+                        ],
+                        [
+                          -9e-05,
+                          -6.7e-05
+                        ]
+                      ]
+                    ]
+                  },
+                  "floorType": "NORMAL_FLOOR",
+                  "floorIndex": 5
+                },
+                "aliasNames": [],
+                "createdAt": "2026-06-03T06:54:18.782Z",
+                "updatedAt": "2026-06-03T08:15:28.803Z",
+                "deletedAt": null,
+                "fileIds": [],
+                "sublocation": [
+                  {
+                    "id": "1a3f8e12-8205-5c53-a792-d632b5bbfef7",
+                    "locationName": "Mechanical Room",
+                    "description": null,
+                    "locationType": "d0bbb256-19df-48aa-93cd-8e43d26cb32b",
+                    "locationTypeName": "Room",
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "zipcode": null,
+                    "country": null,
+                    "coordinates": null,
+                    "parentId": "25296531-f926-5903-a985-159a2867124f",
+                    "metadata": null,
+                    "aliasNames": [],
+                    "createdAt": "2026-06-03T06:54:18.782Z",
+                    "updatedAt": "2026-06-03T06:54:18.782Z",
+                    "deletedAt": null,
+                    "fileIds": [],
+                    "sublocation": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

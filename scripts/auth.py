@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exchange CriticalAsset client credentials for a bearer token."""
+"""Exchange CriticalAsset credentials for a bearer token (M2M or human login fallback)."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from queries import REFRESH_MUTATION, TOKEN_MUTATION  # noqa: E402
+from queries import HUMAN_LOGIN, REFRESH_MUTATION, TOKEN_MUTATION  # noqa: E402
 
 TOKEN_PATH = ROOT / "data" / ".token"
 
@@ -60,20 +60,56 @@ def token_valid(tok: dict, skew: int = 60) -> bool:
     if not tok or "accessToken" not in tok:
         return False
     saved = tok.get("saved_at", 0)
-    expires = tok.get("expiresIn", 0)
+    expires = tok.get("expiresIn", 3600)
     return time.time() < saved + expires - skew
 
 
-def exchange() -> dict:
+def exchange_m2m() -> dict:
     url = os.environ["CA_API_URL"]
-    client_id = os.environ["CA_CLIENT_ID"]
-    client_secret = os.environ["CA_CLIENT_SECRET"]
-    scope = os.environ.get("CA_SCOPES", "workorders.read assets.read locations.read")
+    result = gql(
+        url,
+        TOKEN_MUTATION,
+        {
+            "input": {
+                "clientId": os.environ["CA_CLIENT_ID"],
+                "clientSecret": os.environ["CA_CLIENT_SECRET"],
+                "scope": os.environ.get("CA_SCOPES", "workorders.read assets.read locations.read"),
+            }
+        },
+    )
+    if result.get("errors"):
+        raise RuntimeError(json.dumps(result["errors"], indent=2))
+    return result["data"]["applicationClientCredentialsToken"]
 
+
+def exchange_human() -> dict:
+    url = os.environ["CA_API_URL"]
+    email = os.environ["CA_CONSOLE_EMAIL"]
+    password = os.environ["CA_CONSOLE_PASSWORD"]
+    subdomain = os.environ.get("CA_SUBDOMAIN", "2402ndave")
+    result = gql(
+        url,
+        HUMAN_LOGIN,
+        {"input": {"email": email, "password": password, "subdomain": subdomain}},
+    )
+    if result.get("errors"):
+        raise RuntimeError(json.dumps(result["errors"], indent=2))
+    auth = result["data"]["login"]
+    return {
+        "accessToken": auth["accessToken"],
+        "refreshToken": auth.get("refreshToken"),
+        "tokenType": "Bearer",
+        "expiresIn": 3600,
+        "scope": "session",
+        "authMode": "human",
+    }
+
+
+def exchange() -> dict:
     cached = load_token()
-    if cached and token_valid(cached) and cached.get("refreshToken"):
+    if cached and token_valid(cached) and cached.get("refreshToken") and cached.get("authMode") != "human":
         try:
-            result = gql(url, REFRESH_MUTATION, {"refreshToken": cached["refreshToken"]})
+            result = gql(os.environ["CA_API_URL"], REFRESH_MUTATION, {"refreshToken": cached["refreshToken"]})
             refreshed = result.get("data", {}).get("applicationRefreshToken")
             if refreshed:
                 save_token(refreshed)
@@ -81,36 +117,39 @@ def exchange() -> dict:
         except Exception:
             pass
 
-    result = gql(
-        url,
-        TOKEN_MUTATION,
-        {
-            "input": {
-                "clientId": client_id,
-                "clientSecret": client_secret,
-                "scope": scope,
-            }
-        },
-    )
-    if result.get("errors"):
-        raise RuntimeError(json.dumps(result["errors"], indent=2))
-    token = result["data"]["applicationClientCredentialsToken"]
+    try:
+        token = exchange_m2m()
+        token["authMode"] = "m2m"
+        save_token(token)
+        return token
+    except Exception:
+        pass
+
+    token = exchange_human()
     save_token(token)
     return token
 
 
 def main() -> int:
     load_dotenv()
-    for key in ("CA_API_URL", "CA_CLIENT_ID", "CA_CLIENT_SECRET"):
+    for key in ("CA_API_URL",):
         if not os.environ.get(key):
             print(f"Missing {key}. Copy .env.example → .env", file=sys.stderr)
             return 1
+    if not os.environ.get("CA_CLIENT_ID") and not os.environ.get("CA_CONSOLE_EMAIL"):
+        print("Need CA_CLIENT_ID or CA_CONSOLE_EMAIL in .env", file=sys.stderr)
+        return 1
     try:
         token = exchange()
     except Exception as exc:
         print(f"Token exchange failed: {exc}", file=sys.stderr)
         return 1
-    print(json.dumps({k: token[k] for k in ("accessToken", "tokenType", "expiresIn", "scope")}, indent=2))
+    print(
+        json.dumps(
+            {k: token[k] for k in ("accessToken", "tokenType", "expiresIn", "scope", "authMode") if k in token},
+            indent=2,
+        )
+    )
     print(f"\nToken cached at {TOKEN_PATH}", file=sys.stderr)
     return 0
 

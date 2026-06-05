@@ -12,6 +12,16 @@ mutation ApplicationToken($input: ApplicationClientCredentialsInput!) {
 }
 """
 
+HUMAN_LOGIN = """
+mutation Login($input: LoginInput!) {
+  login(input: $input) {
+    accessToken
+    refreshToken
+    user { id email firstName lastName }
+  }
+}
+"""
+
 REFRESH_MUTATION = """
 mutation RefreshApplicationToken($refreshToken: String!) {
   applicationRefreshToken(refreshToken: $refreshToken) {
@@ -42,9 +52,10 @@ query FetchWorkOrders($limit: Int!, $offset: Int) {
       workOrderServiceCategory
       workOrderStageId
       workOrderStage { id name }
-      asset { id name status serialNumber }
-      location { id locationName address }
-      assignees { id name email }
+      location { id locationName address city state }
+      workOrderAssets {
+        asset { id name status serialNumber }
+      }
       createdAt
       updatedAt
     }
@@ -74,19 +85,30 @@ query FetchLocations {
     id
     locationName
     address
+    city
+    state
+    zipcode
     parentId
-    locationType { id name }
+    locationType
+    locationTypeName
   }
 }
 """
 
 LOCATIONS_TREE = """
 query FetchLocationsTree {
-  locationsTree {
+  locationsTree
+}
+"""
+
+CREATE_WORK_ORDER = """
+mutation CreateWorkOrder($input: CreateWorkOrderInput!) {
+  createWorkOrder(input: $input) {
     id
-    locationName
-    address
-    children { id locationName address }
+    title
+    description
+    severity
+    workOrderStage { name }
   }
 }
 """

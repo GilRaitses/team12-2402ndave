@@ -5,23 +5,23 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 rm -rf "$ROOT/docs/dashboard" "$ROOT/docs/data"
 mkdir -p "$ROOT/docs"
 cp -R "$ROOT/dashboard" "$ROOT/docs/dashboard"
-if [ -d "$ROOT/data" ]; then
-  mkdir -p "$ROOT/docs/data"
-  for f in workorders.json assets.json locations.json locations_tree.json; do
-    [ -f "$ROOT/data/$f" ] && cp "$ROOT/data/$f" "$ROOT/docs/data/"
-  done
-fi
+mkdir -p "$ROOT/docs/data"
+for f in workorders.json assets.json locations.json locations_tree.json meta.json; do
+  [ -f "$ROOT/data/$f" ] && cp "$ROOT/data/$f" "$ROOT/docs/data/"
+done
 cat > "$ROOT/docs/index.html" <<'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=dashboard/index.html" />
-  <title>240 2nd Avenue Dashboard</title>
+  <meta http-equiv="refresh" content="0; url=submission.html" />
+  <title>Team 12 — 240 2nd Avenue</title>
 </head>
-<body><p><a href="dashboard/index.html">Work Orders Dashboard</a></p></body>
+<body>
+  <p><a href="submission.html">Team 12 Submission</a> · <a href="dashboard/index.html">Dashboard</a></p>
+</body>
 </html>
 EOF
-# GitHub Pages: data lives alongside dashboard
-sed -i '' 's|data-data-base="../data"|data-data-base="../data"|' "$ROOT/docs/dashboard/index.html" 2>/dev/null || \
-  sed -i 's|data-data-base="../data"|data-data-base="../data"|' "$ROOT/docs/dashboard/index.html"
-echo "Synced to docs/ — commit and push for GitHub Pages"
+touch "$ROOT/docs/.nojekyll"
+echo "Synced to docs/"
+echo "  Submission: docs/submission.html"
+echo "  Dashboard:  docs/dashboard/index.html"

@@ -1,21 +1,33 @@
 # O0 step log — Team 12 City Hacks Challenge 1
 
-## 2026-06-05 — O0 cast and repo bootstrap
+## 2026-06-05 — COMPLETE
 
-- Read brief: https://thecityhacksthestate.com/challenge1
-- Read API manual: https://thecityhacksthestate.com/api-docs
-- Verified staging API reachable; introspection works without auth.
-- Token exchange with printed M2M credentials: **FAILED** (`Invalid client_id or client_secret`).
-- Saved `docs/api/schema_snapshot.json` (651 KB) via unauthenticated introspection.
-- Created local repo `/Users/gilraitses/team12-2402ndave`.
-- Published GitHub: https://github.com/GilRaitses/team12-2402ndave
-- Enabled GitHub Pages: https://gilraitses.github.io/team12-2402ndave/
-- Cast lanes O1–O4; handoff written.
-- Local `.env` created (gitignored) with team credentials for worker hydration.
+### Auth (O1)
+- M2M credentials: still invalid on staging.
+- Human session login via GraphQL `login` mutation: **SUCCESS**.
+- Token cached in `data/.token` (gitignored); `scripts/auth.py` tries M2M then human fallback.
 
-### Next
+### Data hydration (O2)
+- `workorders.json` — 3 live work orders
+- `assets.json` — 100 assets
+- `locations.json` — site record
+- `locations_tree.json` — full building/floor tree (58 KB)
+- `meta.json` — fetch timestamp, auth mode
 
-1. Redeem activation codes at day-of desk OR log into Developer Console and verify app exists / rotate secret.
-2. `python3 scripts/auth.py` → success
-3. `python3 scripts/fetch_all.py` → populate `data/*.json`
-4. `./scripts/sync_pages.sh && git add docs/data docs/dashboard && git commit && git push`
+### Dashboard (O3)
+- Counter row, filters (status, priority, category), table, detail panel
+- Asset joins via `workOrderAssets`
+- GitHub Pages bundle in `docs/`
+
+### Bonus (O4)
+- Service category grouping
+- Building open-WO stats + floor count from location tree
+- Student signal structurer with confidence labels
+- `scripts/submit_signal.py` for write-back (dry-run if scope missing)
+
+### Submission
+- `docs/submission.html` — demo links, judging map, 3-minute script
+
+### Publish
+- Repo: https://github.com/GilRaitses/team12-2402ndave
+- Pages: https://gilraitses.github.io/team12-2402ndave/

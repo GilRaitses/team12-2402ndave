@@ -9,6 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+import urllib.error
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +19,7 @@ from queries import ASSETS, INTROSPECTION, LOCATIONS, LOCATIONS_TREE, WORK_ORDER
 
 DATA = ROOT / "data"
 API_DOCS = ROOT / "docs" / "api"
+META = ROOT / "data" / "meta.json"
 
 
 def load_dotenv() -> None:
@@ -55,8 +57,12 @@ def gql(query: str, variables: dict | None = None, token: str | None = None) -> 
     if token:
         headers["Authorization"] = f"Bearer {token}"
     req = urllib.request.Request(url, data=data, headers=headers, method="POST")
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return json.loads(resp.read().decode())
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            return json.loads(resp.read().decode())
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode()
+        raise RuntimeError(f"HTTP {exc.code}: {detail[:500]}") from exc
 
 
 def write_json(path: Path, payload: dict) -> None:
@@ -65,23 +71,55 @@ def write_json(path: Path, payload: dict) -> None:
     print(f"Wrote {path.relative_to(ROOT)} ({path.stat().st_size} bytes)")
 
 
+def normalize_work_orders(raw: dict) -> dict:
+    nodes = raw.get("data", {}).get("workOrders", {}).get("nodes", [])
+    for wo in nodes:
+        assets = wo.get("workOrderAssets") or []
+        wo["asset"] = assets[0]["asset"] if assets else None
+        assignments = wo.get("workOrderAssignments") or []
+        assignees = []
+        for a in assignments:
+            assignees.extend(a.get("users") or [])
+        wo["assignees"] = assignees
+    return raw
+
+
 def fetch_authenticated() -> None:
     token = get_token()
+    tok_meta = json.loads((DATA / ".token").read_text())
+    write_json(
+        META,
+        {
+            "fetchedAt": __import__("datetime").datetime.now().isoformat(),
+            "authMode": tok_meta.get("authMode", "unknown"),
+            "building": "240 2nd Avenue",
+            "team": 12,
+        },
+    )
+
     wo = gql(WORK_ORDERS, {"limit": 100, "offset": 0}, token)
+    if wo.get("errors"):
+        raise RuntimeError(json.dumps(wo["errors"]))
+    wo = normalize_work_orders(wo)
     write_json(DATA / "workorders.json", wo)
 
     assets = gql(ASSETS, {"limit": 100, "offset": 0}, token)
+    if assets.get("errors"):
+        raise RuntimeError(json.dumps(assets["errors"]))
     write_json(DATA / "assets.json", assets)
 
     locs = gql(LOCATIONS, token=token)
+    if locs.get("errors"):
+        raise RuntimeError(json.dumps(locs["errors"]))
     write_json(DATA / "locations.json", locs)
 
     tree = gql(LOCATIONS_TREE, token=token)
+    if tree.get("errors"):
+        raise RuntimeError(json.dumps(tree["errors"]))
     write_json(DATA / "locations_tree.json", tree)
 
 
 def fetch_schema_snapshot() -> None:
-    # Introspection works without auth on staging
     snap = gql(INTROSPECTION)
     write_json(API_DOCS / "schema_snapshot.json", snap)
 
@@ -102,6 +140,7 @@ def main() -> int:
         print(f"Authenticated fetch failed: {exc}", file=sys.stderr)
         print("Schema snapshot saved. Fix credentials then re-run.", file=sys.stderr)
         return 1
+    print("Hydration complete.")
     return 0
 
 
