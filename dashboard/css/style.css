@@ -196,3 +196,17 @@ tbody tr.selected { background: rgba(61, 156, 245, 0.15); }
 
 header a { text-decoration: none; }
 header a:hover { text-decoration: underline; }
+
+.demo-banner {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.demo-banner.live { background: rgba(107,207,127,0.2); color: var(--low); }
+.demo-banner.static { background: rgba(245,166,35,0.15); color: var(--open); }
+
+#building-map { height: 220px; border-radius: 8px; border: 1px solid var(--border); margin-top: 0.5rem; }
+.map-panel { grid-column: 1 / -1; }
+
+.toolbar label input[type=checkbox] { margin-right: 0.35rem; }

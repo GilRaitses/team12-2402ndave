@@ -74,13 +74,11 @@ def write_json(path: Path, payload: dict) -> None:
 def normalize_work_orders(raw: dict) -> dict:
     nodes = raw.get("data", {}).get("workOrders", {}).get("nodes", [])
     for wo in nodes:
+        title = wo.get("title") or ""
+        wo["_source"] = "hackathon_test" if title.startswith("Student Signal:") else "portfolio"
         assets = wo.get("workOrderAssets") or []
         wo["asset"] = assets[0]["asset"] if assets else None
-        assignments = wo.get("workOrderAssignments") or []
-        assignees = []
-        for a in assignments:
-            assignees.extend(a.get("users") or [])
-        wo["assignees"] = assignees
+        wo["assignees"] = []
     return raw
 
 

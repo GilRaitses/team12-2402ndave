@@ -42,9 +42,24 @@ function matchWorkOrder(text, workOrders) {
 }
 
 function enrichPublic(issueCat, publicData) {
+  const enriched = publicData?.enriched_hits || publicData?.building_specific_hits || [];
+  if (enriched.length) {
+    return enriched.filter((h) => {
+      const m = (h.operational_meaning || "").toLowerCase();
+      if (issueCat === "plumbing") return /plumb|water|sewer|leak|sanitary|habitability/.test(m);
+      if (issueCat === "hvac") return /heat|hvac|vent|comfort|hot/.test(m);
+      return h.relevance === "building_specific";
+    }).slice(0, 5).map((h) => ({
+      source: h.source,
+      detail: h.complaint_type || h.novdescription,
+      address: h.incident_address,
+      status: h.status,
+      meaning: h.operational_meaning,
+    }));
+  }
   const hits = [];
   const src = publicData?.sources || {};
-  for (const row of (src["311_service_requests"] || []).slice(0, 25)) {
+  for (const row of (src["311_geospatial"] || src["311_service_requests"] || []).slice(0, 25)) {
     const ct = (row.complaint_type || "").toLowerCase();
     if (issueCat === "plumbing" && /plumb|water|sewer|leak/.test(ct))
       hits.push({ source: "NYC 311", detail: row.complaint_type, address: row.incident_address, status: row.status, meaning: "Area plumbing/water complaints — strengthens habitability signal" });

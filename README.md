@@ -24,8 +24,8 @@ python3 scripts/fetch_all.py     # hydrate data/*.json
 python3 -m http.server 8080 --directory .
 # → http://localhost:8080/dashboard/
 
-# Live proxy (optional)
-python3 backend/proxy.py         # http://127.0.0.1:8787/graphql
+# Live demo server (judges — primary)
+python3 backend/api_server.py    # http://127.0.0.1:8787/dashboard/
 ```
 
 ## Work lanes (O0 cast)

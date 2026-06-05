@@ -30,59 +30,8 @@
           "workOrderAssets": [],
           "createdAt": "1780681273903",
           "updatedAt": "1780681274560",
+          "_source": "hackathon_test",
           "asset": null,
-          "assignees": []
-        },
-        {
-          "id": "974ed1a3-ccad-5a9e-ad73-25b326fb48aa",
-          "title": "Annual Steam System Inspection",
-          "description": "Perform comprehensive annual inspection of the steam pressure reducing valve station and safety relief valves.",
-          "severity": "high",
-          "executionPriority": "high",
-          "startDate": "1780401835700",
-          "endDate": "1781256248488",
-          "locationId": "31c0375d-326a-59f1-aa3f-93cf05def576",
-          "locationAddress": "240 2nd Avenue",
-          "workOrderType": "preventive_maintenance",
-          "workOrderServiceCategory": "hvac",
-          "workOrderStageId": "f15658fd-eac4-4ebd-8fd4-43a32d50b5d2",
-          "workOrderStage": {
-            "id": "f15658fd-eac4-4ebd-8fd4-43a32d50b5d2",
-            "name": "To Do"
-          },
-          "location": {
-            "id": "31c0375d-326a-59f1-aa3f-93cf05def576",
-            "locationName": "240 2nd Avenue",
-            "address": "240 2nd Avenue",
-            "city": "",
-            "state": ""
-          },
-          "workOrderAssets": [
-            {
-              "asset": {
-                "id": "5fee9ad8-8a2d-58aa-aa6e-2cb28ab6af5b",
-                "name": "Steam Pressure Reducing Valve Station",
-                "status": null,
-                "serialNumber": null
-              }
-            },
-            {
-              "asset": {
-                "id": "3d8271ea-f564-5226-a7d3-2007e2420c27",
-                "name": "Steam Safety Relief Valve",
-                "status": null,
-                "serialNumber": null
-              }
-            }
-          ],
-          "createdAt": "1780401835700",
-          "updatedAt": "1780401835700",
-          "asset": {
-            "id": "5fee9ad8-8a2d-58aa-aa6e-2cb28ab6af5b",
-            "name": "Steam Pressure Reducing Valve Station",
-            "status": null,
-            "serialNumber": null
-          },
           "assignees": []
         },
         {
@@ -129,6 +78,7 @@
           ],
           "createdAt": "1780401835700",
           "updatedAt": "1780401835700",
+          "_source": "portfolio",
           "asset": {
             "id": "ab2236a0-784d-5a3f-a277-6b0dc482274b",
             "name": "Main Switchboard",
@@ -181,9 +131,63 @@
           ],
           "createdAt": "1780401835700",
           "updatedAt": "1780401835700",
+          "_source": "portfolio",
           "asset": {
             "id": "365ba24b-ae3f-5d16-a94e-ebf46deca904",
             "name": "Exit Sign",
+            "status": null,
+            "serialNumber": null
+          },
+          "assignees": []
+        },
+        {
+          "id": "974ed1a3-ccad-5a9e-ad73-25b326fb48aa",
+          "title": "Annual Steam System Inspection",
+          "description": "240 2nd Avenue \u00b7 Floor 3: HVAC / comfort / ventilation. Student reports: \"Steam valve area feels hotter than usual on floor 3 near mechanical room\". Duration: unknown. Still happening: True. Recommended: Verify supply air temp, damper position, actuator, schedule.",
+          "severity": "high",
+          "executionPriority": "high",
+          "startDate": "1780401835700",
+          "endDate": "1781256248488",
+          "locationId": "31c0375d-326a-59f1-aa3f-93cf05def576",
+          "locationAddress": "240 2nd Avenue",
+          "workOrderType": "preventive_maintenance",
+          "workOrderServiceCategory": "hvac",
+          "workOrderStageId": "f15658fd-eac4-4ebd-8fd4-43a32d50b5d2",
+          "workOrderStage": {
+            "id": "f15658fd-eac4-4ebd-8fd4-43a32d50b5d2",
+            "name": "To Do"
+          },
+          "location": {
+            "id": "31c0375d-326a-59f1-aa3f-93cf05def576",
+            "locationName": "240 2nd Avenue",
+            "address": "240 2nd Avenue",
+            "city": "",
+            "state": ""
+          },
+          "workOrderAssets": [
+            {
+              "asset": {
+                "id": "5fee9ad8-8a2d-58aa-aa6e-2cb28ab6af5b",
+                "name": "Steam Pressure Reducing Valve Station",
+                "status": null,
+                "serialNumber": null
+              }
+            },
+            {
+              "asset": {
+                "id": "3d8271ea-f564-5226-a7d3-2007e2420c27",
+                "name": "Steam Safety Relief Valve",
+                "status": null,
+                "serialNumber": null
+              }
+            }
+          ],
+          "createdAt": "1780401835700",
+          "updatedAt": "1780681365737",
+          "_source": "portfolio",
+          "asset": {
+            "id": "5fee9ad8-8a2d-58aa-aa6e-2cb28ab6af5b",
+            "name": "Steam Pressure Reducing Valve Station",
             "status": null,
             "serialNumber": null
           },

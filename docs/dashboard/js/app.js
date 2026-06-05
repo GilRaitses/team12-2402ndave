@@ -1,8 +1,10 @@
 const DATA_BASE = document.body.dataset.dataBase || "../data";
 
 let workOrders = [];
+let allWorkOrders = [];
 let assets = [];
 let locationsTree = [];
+let portfolioOnly = true;
 
 async function loadJson(path) {
   const res = await fetch(`${DATA_BASE}/${path}`);
@@ -13,18 +15,27 @@ async function loadJson(path) {
 async function loadData() {
   const status = document.getElementById("status");
   try {
-    const [wo, ast, tree] = await Promise.all([
-      loadJson("workorders.json"),
+    const woResult = await Api.loadWorkOrders(portfolioOnly);
+    allWorkOrders = woResult.nodes;
+    workOrders = allWorkOrders;
+
+    const [ast, tree] = await Promise.all([
       loadJson("assets.json").catch(() => ({ data: { assets: { assets: [] } } })),
       loadJson("locations_tree.json").catch(() => ({ data: { locationsTree: [] } })),
     ]);
-    if (wo.errors) throw new Error(wo.errors[0]?.message || "GraphQL error");
-    workOrders = wo.data?.workOrders?.nodes || [];
     assets = ast.data?.assets?.assets || [];
     locationsTree = tree.data?.locationsTree || [];
-    status.hidden = true;
+
+    if (woResult.live) {
+      status.className = "status-msg";
+      status.hidden = false;
+      status.textContent = `Live feed · ${workOrders.length} work orders · fetched ${new Date(woResult.fetchedAt * 1000).toLocaleTimeString()}`;
+    } else {
+      status.hidden = true;
+    }
     render();
     if (window.renderBonus) window.renderBonus(workOrders, assets, locationsTree);
+    if (window.initMap) window.initMap(workOrders, locationsTree);
   } catch (err) {
     status.className = "status-msg error";
     status.hidden = false;
@@ -149,6 +160,7 @@ function escapeHtml(s) {
 function populateCategoryFilter() {
   const sel = document.getElementById("filter-category");
   if (!sel) return;
+  while (sel.options.length > 1) sel.remove(1);
   const cats = [...new Set(workOrders.map((w) => w.workOrderServiceCategory).filter(Boolean))].sort();
   cats.forEach((c) => {
     const o = document.createElement("option");
@@ -165,9 +177,15 @@ function render() {
   renderTable(rows);
 }
 
+document.getElementById("portfolio-only")?.addEventListener("change", (e) => {
+  portfolioOnly = e.target.checked;
+  loadData();
+});
+
 ["filter-status", "filter-priority", "filter-category"].forEach((id) => {
   const el = document.getElementById(id);
   if (el) el.addEventListener("change", render);
 });
 
+Api.showBanner();
 loadData();

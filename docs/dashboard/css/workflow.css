@@ -30,3 +30,18 @@ button.secondary { background: transparent; color: var(--accent); border: 1px so
 .closure.warn { background: rgba(245,166,35,0.25); color: var(--open); }
 .closure.bad { background: rgba(231,76,60,0.25); color: var(--overdue); }
 .escalate { color: var(--overdue); font-weight: 600; margin-top: 0.5rem; }
+
+.copilot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+@media (max-width: 700px) { .copilot-grid { grid-template-columns: 1fr; } }
+.copilot-col { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem; }
+.copilot-col h3 { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+.copilot-before { font-size: 0.8rem; color: var(--muted); }
+.copilot-after { font-size: 0.85rem; }
+.ai-badge { background: rgba(107,207,127,0.25) !important; color: var(--low) !important; }
+
+@media (max-width: 480px) {
+  .workflow-main { padding: 1rem; }
+  .workflow-grid { grid-template-columns: 1fr; }
+  .primary, .secondary, .closure { width: 100%; padding: 0.75rem; font-size: 1rem; }
+  textarea, input[type=text], select { font-size: 16px; }
+}

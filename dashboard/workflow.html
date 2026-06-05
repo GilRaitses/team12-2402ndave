@@ -40,6 +40,8 @@
         <textarea id="signal-input" rows="4" placeholder="The third-floor bathroom has been closed for two weeks. There is water near the sink."></textarea>
         <label>Photo note (optional)</label>
         <input id="photo-note" type="text" placeholder="e.g. Photo attached: wet floor near drain" />
+        <label>Photo capture</label>
+        <input id="photo-file" type="file" accept="image/*" capture="environment" />
         <div class="row-checks">
           <label><input type="checkbox" id="still-happening" checked /> Still happening</label>
           <label><input type="checkbox" id="happened-before" /> Happened before</label>
@@ -62,7 +64,7 @@
         <div id="workflow-out"></div>
         <div class="actions">
           <button id="btn-download" class="secondary">Download payload JSON</button>
-          <button id="btn-record" class="primary">Prepare CriticalAsset record</button>
+          <button id="btn-record" class="primary">Record to CriticalAsset</button>
         </div>
         <pre id="record-cmd" class="cmd hidden"></pre>
       </div>
@@ -78,6 +80,7 @@
       </div>
     </div>
   </main>
+  <script src="js/api.js"></script>
   <script src="js/workflow-engine.js"></script>
   <script src="js/workflow.js"></script>
 </body>
