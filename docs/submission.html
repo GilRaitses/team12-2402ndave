@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Team 12 Submission — 240 2nd Avenue</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <title>Team 12 — Full Submission</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root { --bg:#0f1419; --surface:#1a2332; --border:#2d3a4f; --text:#e8edf4; --muted:#8b9cb3; --accent:#3d9cf5; --ok:#6bcf7f; }
@@ -13,113 +12,144 @@
     header { padding:2rem; border-bottom:1px solid var(--border); text-align:center; }
     header h1 { font-size:1.75rem; }
     header p { color:var(--muted); margin-top:0.5rem; }
-    main { max-width:900px; margin:0 auto; padding:2rem; }
+    main { max-width:960px; margin:0 auto; padding:2rem; }
     section { margin-bottom:2rem; }
     h2 { font-size:1.1rem; margin-bottom:0.75rem; color:var(--accent); }
+    h3 { font-size:0.95rem; margin:1rem 0 0.5rem; }
     .card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:1.25rem; margin-bottom:1rem; }
     a { color:var(--accent); }
-    ul { padding-left:1.25rem; }
+    ul, ol { padding-left:1.25rem; }
     li { margin:0.35rem 0; }
     .links { display:grid; gap:0.5rem; }
-    .links a { font-weight:500; }
     .check { color:var(--ok); }
     table { width:100%; border-collapse:collapse; font-size:0.875rem; }
-    th, td { text-align:left; padding:0.5rem; border-bottom:1px solid var(--border); }
+    th, td { text-align:left; padding:0.5rem; border-bottom:1px solid var(--border); vertical-align:top; }
     th { color:var(--muted); }
-    .cta { display:inline-block; margin-top:1rem; background:var(--accent); color:#fff; padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:600; }
-    .cta:hover { opacity:0.9; }
-    .tag { display:inline-block; font-size:0.7rem; background:rgba(107,207,127,0.2); color:var(--ok); padding:0.15rem 0.5rem; border-radius:4px; text-transform:uppercase; }
+    .cta { display:inline-block; margin:0.5rem 0.5rem 0 0; background:var(--accent); color:#fff; padding:0.75rem 1.25rem; border-radius:8px; text-decoration:none; font-weight:600; }
+    .tag { display:inline-block; font-size:0.7rem; background:rgba(107,207,127,0.2); color:var(--ok); padding:0.15rem 0.5rem; border-radius:4px; text-transform:uppercase; margin:0 0.25rem; }
+    .warn { color:#f5a623; }
+    code { font-size:0.8rem; background:var(--bg); padding:0.1rem 0.35rem; border-radius:3px; }
   </style>
 </head>
 <body>
   <header>
-    <p class="tag">Challenge 01 · Submission</p>
+    <p><span class="tag">Challenge 01</span><span class="tag">Challenge 02</span><span class="tag">Day-Of Flow</span></p>
     <h1>Team 12 — 240 2nd Avenue</h1>
-    <p>The City Hacks The State · NYC Tech Week 2026</p>
+    <p>The City Hacks The State · NYC Tech Week 2026 · Hub 12</p>
   </header>
   <main>
     <section>
-      <h2>Live links</h2>
+      <h2>Rules submission checklist</h2>
+      <div class="card">
+        <table>
+          <tr><th>Requirement</th><th>Response</th></tr>
+          <tr><td>Team name</td><td>Team 12 — 240 2nd Avenue</td></tr>
+          <tr><td>Team members</td><td>Daniel Lopez (operator console) · Gil Raitses (build/orchestration) · <em>add remaining roster names</em></td></tr>
+          <tr><td>Dashboard name</td><td>240 2nd Avenue Operations Dashboard + Student Signal Workflow</td></tr>
+          <tr><td>Dashboard link</td><td><a href="dashboard/index.html">Dashboard</a> · <a href="dashboard/workflow.html">Workflow (C02)</a></td></tr>
+          <tr><td>Repository</td><td><a href="https://github.com/GilRaitses/team12-2402ndave">github.com/GilRaitses/team12-2402ndave</a></td></tr>
+          <tr><td>Target user</td><td>Building operator / facilities team at 240 2nd Avenue; students as early field sensors</td></tr>
+          <tr><td>Problem statement</td><td>Work orders exist but field truth is thin. Students experience issues first; operators need signal → evidence → action → verification.</td></tr>
+          <tr><td>Data sources</td><td>CriticalAsset GraphQL (WO/assets/locations) · NYC 311 · HPD violations · compliance rule pack</td></tr>
+          <tr><td>AI tools</td><td>Rule-based structuring engine (<code>workflow-engine.js</code>, <code>ai_structure.py</code>) — disclosed, human-reviewable, no hidden LLM</td></tr>
+          <tr><td>3-minute pitch</td><td>See demo script below</td></tr>
+          <tr><td>Limitations</td><td>Prototype only; not production/emergency/legal advice; M2M API creds inactive (session auth used); static Pages cannot call CA write API directly</td></tr>
+          <tr><td>Before real-world use</td><td>Rotate secrets; enable M2M scopes; legal review of compliance hints; photo upload pipeline; live write proxy; student identity/privacy policy</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Live product links</h2>
       <div class="card links">
-        <a href="dashboard/index.html">→ Work Orders Dashboard</a>
-        <a href="https://github.com/GilRaitses/team12-2402ndave" target="_blank" rel="noopener">→ GitHub Repository</a>
-        <a href="https://gilraitses.github.io/team12-2402ndave/dashboard/" target="_blank" rel="noopener">→ GitHub Pages (public)</a>
-        <a href="https://2402ndave.stg.criticalasset.com/" target="_blank" rel="noopener">→ CriticalAsset Console (240 2nd Avenue)</a>
-        <a href="https://thecityhacksthestate.com/challenge1" target="_blank" rel="noopener">→ Challenge 01 Brief</a>
+        <a href="dashboard/index.html">→ Challenge 01: Work Orders Dashboard</a>
+        <a href="dashboard/workflow.html">→ Challenge 02: Student Signal Workflow</a>
+        <a href="https://github.com/GilRaitses/team12-2402ndave">→ GitHub Repository</a>
+        <a href="https://gilraitses.github.io/team12-2402ndave/">→ GitHub Pages root</a>
+        <a href="https://2402ndave.stg.criticalasset.com/">→ CriticalAsset Console</a>
+        <a href="https://thecityhacksthestate.com/challenge1">→ Challenge 01 Brief</a>
+        <a href="https://thecityhacksthestate.com/challenge2">→ Challenge 02 Brief</a>
       </div>
+      <a class="cta" href="dashboard/workflow.html">Open Workflow</a>
+      <a class="cta" href="dashboard/index.html">Open Dashboard</a>
     </section>
 
     <section>
-      <h2>What we built</h2>
+      <h2>Challenge 01 — complete</h2>
       <div class="card">
-        <p>A building-operator dashboard that pulls <strong>live work orders</strong> from the CriticalAsset GraphQL API for <strong>240 2nd Avenue</strong>, joins them to linked assets and locations, and turns facility data into a Monday-morning decision surface.</p>
-        <ul style="margin-top:1rem">
-          <li><span class="check">✓</span> OAuth2 / session auth via server-side scripts (no browser secrets)</li>
-          <li><span class="check">✓</span> Live pull: 3 work orders, 100 assets, full location tree</li>
-          <li><span class="check">✓</span> Counter row: Open · In Progress · Overdue</li>
-          <li><span class="check">✓</span> Filterable table with asset, category, location, due date</li>
-          <li><span class="check">✓</span> Detail panel with full work order + linked assets</li>
-          <li><span class="check">✓</span> Bonus: category grouping, building stats, student signal structurer</li>
+        <ul>
+          <li><span class="check">✓</span> Live CriticalAsset pull (4 work orders, 100 assets, location tree)</li>
+          <li><span class="check">✓</span> Counters, filters, table, detail panel with asset joins</li>
+          <li><span class="check">✓</span> Server-side auth — no browser secrets</li>
         </ul>
-        <a class="cta" href="dashboard/index.html">Open Dashboard</a>
       </div>
     </section>
 
     <section>
-      <h2>Data sources</h2>
+      <h2>Challenge 02 — complete</h2>
       <div class="card">
-        <table>
-          <tr><th>Endpoint</th><th>Scope</th><th>Local artifact</th></tr>
-          <tr><td><code>workOrders</code></td><td>workorders.read</td><td><code>data/workorders.json</code></td></tr>
-          <tr><td><code>assets</code></td><td>assets.read</td><td><code>data/assets.json</code></td></tr>
-          <tr><td><code>locations</code></td><td>locations.read</td><td><code>data/locations.json</code></td></tr>
-          <tr><td><code>locationsTree</code></td><td>locations.read</td><td><code>data/locations_tree.json</code></td></tr>
-        </table>
-        <p style="margin-top:0.75rem;color:var(--muted);font-size:0.875rem">API: <code>https://2402ndave.stg.criticalasset.com/api</code> · Hydrated 2026-06-05 via human session auth (M2M creds pending activation)</p>
+        <ul>
+          <li><span class="check">✓</span> Work-order selection from live feed</li>
+          <li><span class="check">✓</span> Field observation intake (plain English + photo note)</li>
+          <li><span class="check">✓</span> AI structuring → issue type, location, severity, missing info, follow-ups</li>
+          <li><span class="check">✓</span> Public enrichment — NYC 311 + HPD (East Village zips 10003/09/10)</li>
+          <li><span class="check">✓</span> Compliance obligation hints (plumbing, HVAC, electrical, life safety, elevator)</li>
+          <li><span class="check">✓</span> Workflow recommendation + escalation logic</li>
+          <li><span class="check">✓</span> Closure verification loop (browser log + <code>record_signal.py --closure</code>)</li>
+          <li><span class="check">✓</span> CriticalAsset write-back tested (<code>createWorkOrder</code>, <code>updateWorkOrder</code>)</li>
+        </ul>
       </div>
     </section>
 
     <section>
-      <h2>Judging alignment (Challenge 01)</h2>
+      <h2>Day-of six-step flow</h2>
       <div class="card">
-        <table>
-          <tr><th>Criterion</th><th>Pts</th><th>How we address it</th></tr>
-          <tr><td>Clarity of signal → action</td><td>30</td><td>Student signal panel structures observation → linked WO → next action with confidence labels</td></tr>
-          <tr><td>Working CriticalAsset data pull</td><td>25</td><td>Live GraphQL hydration scripts; 3 WOs + 100 assets from staging</td></tr>
-          <tr><td>Dashboard usability</td><td>20</td><td>Single screen: counters, filters, table, detail panel</td></tr>
-          <tr><td>Bonus: joins, map, student signal</td><td>15</td><td>Asset joins on each WO; building/category stats; signal structurer</td></tr>
-          <tr><td>Demo / storytelling</td><td>10</td><td>3-minute script below</td></tr>
-        </table>
+        <ol>
+          <li><strong>Connect</strong> — <code>scripts/auth.py</code> + <code>fetch_all.py</code></li>
+          <li><strong>Pull ticket</strong> — Dashboard shows live WOs for 240 2nd Avenue</li>
+          <li><strong>Capture signal</strong> — Workflow step 2</li>
+          <li><strong>AI structure</strong> — Workflow step 3 (confidence labels)</li>
+          <li><strong>Public evidence</strong> — Workflow step 4 + <code>enrich_public.py</code></li>
+          <li><strong>Record back</strong> — <code>scripts/record_signal.py</code> → CriticalAsset</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>Infrastructure note</h2>
+      <div class="card">
+        <p><strong>No AWS S3, SQS, or custom cloud infra required.</strong> Stack: Python hydration scripts → JSON cache → GitHub Pages static UI → optional <code>backend/proxy.py</code> for local dev.</p>
+        <p style="margin-top:0.5rem">Amazon Quick / Kiro listed on setup page as optional vibe-coding tools — we shipped custom code instead (allowed per rules).</p>
       </div>
     </section>
 
     <section>
       <h2>3-minute demo script</h2>
       <div class="card">
-        <p><strong>Minute 1 — Signal:</strong> "Students at 240 2nd Avenue notice steam/HVAC and electrical systems need attention before they become emergencies. Our dashboard surfaces what facilities already knows."</p>
-        <p style="margin-top:0.75rem"><strong>Minute 2 — Product:</strong> Show counter row → filter by HVAC → click Annual Steam System Inspection → detail panel shows linked valve assets. Enter a student signal; show structured output with confidence labels.</p>
-        <p style="margin-top:0.75rem"><strong>Minute 3 — Decision:</strong> "Three open preventive maintenance tickets, two high severity. Next action: schedule steam inspection, attach student observation, flag missing shutoff data in CriticalAsset."</p>
+        <h3>Minute 1 — Signal</h3>
+        <p>Students at 240 2nd Avenue feel facility issues before the system does. Our product captures that signal and connects it to real work orders and public evidence.</p>
+        <h3>Minute 2 — Product</h3>
+        <p>Dashboard: 4 live WOs, filter HVAC, open steam inspection. Workflow: enter bathroom signal → AI structures location/issue → 311/HPD context → compliance obligations → recommended dispatch.</p>
+        <h3>Minute 3 — Decision + verification</h3>
+        <p>Record to CriticalAsset via script. Closure buttons ask: fixed / still / worse. Limitations: prototype, human review required, not legal advice.</p>
       </div>
     </section>
 
     <section>
-      <h2>Repo structure</h2>
+      <h2>Judging map</h2>
       <div class="card">
-        <ul>
-          <li><code>scripts/auth.py</code> — token exchange (M2M + human fallback)</li>
-          <li><code>scripts/fetch_all.py</code> — hydrate all data sources</li>
-          <li><code>backend/proxy.py</code> — local GraphQL proxy for dev</li>
-          <li><code>dashboard/</code> — operator UI</li>
-          <li><code>.cca/catalogue/O0/</code> — orchestration manifest + lane assignments</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Team</h2>
-      <div class="card">
-        <p><strong>Hub 12</strong> · Building: <strong>240 2nd Avenue</strong></p>
-        <p style="margin-top:0.5rem;color:var(--muted)">Repository: team12-2402ndave · Orchestrator: O0</p>
+        <table>
+          <tr><th>Criteria</th><th>Pts</th><th>Where</th></tr>
+          <tr><td>C01: signal → action</td><td>30</td><td>Dashboard + workflow recommendation</td></tr>
+          <tr><td>C01: data pull</td><td>25</td><td>Live CriticalAsset hydration</td></tr>
+          <tr><td>C01: usability</td><td>20</td><td>Single-screen dashboard</td></tr>
+          <tr><td>C01: bonus</td><td>15</td><td>Joins, stats, student signal</td></tr>
+          <tr><td>C02: signal capture</td><td>25</td><td>workflow.html step 2</td></tr>
+          <tr><td>C02: AI enrichment</td><td>25</td><td>workflow-engine.js + public data</td></tr>
+          <tr><td>C02: workflow</td><td>20</td><td>Step 5 recommendations</td></tr>
+          <tr><td>C02: compliance/public</td><td>15</td><td>compliance_rules.json + NYC Open Data</td></tr>
+          <tr><td>C02: closure loop</td><td>10</td><td>Step 6 + record_signal --closure</td></tr>
+        </table>
       </div>
     </section>
   </main>

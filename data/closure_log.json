@@ -1,0 +1,80 @@
+[
+  {
+    "at": 1780681365,
+    "action": "updateWorkOrder",
+    "workOrderId": "974ed1a3-ccad-5a9e-ad73-25b326fb48aa",
+    "structured": {
+      "structuredAt": "2026-06-05T17:42:43.354072+00:00",
+      "rawSignal": "Steam valve area feels hotter than usual on floor 3 near mechanical room",
+      "issueType": "hvac",
+      "issueLabel": "HVAC / comfort / ventilation",
+      "location": "240 2nd Avenue \u00b7 Floor 3",
+      "locationConfidence": "Inferred",
+      "severity": "medium",
+      "urgency": "scheduled",
+      "affectedUsers": "Building occupants",
+      "timing": {
+        "stillHappening": true,
+        "duration": "unknown",
+        "confidence": "Missing"
+      },
+      "evidence": [
+        {
+          "type": "photo",
+          "value": "Not provided",
+          "confidence": "Missing"
+        }
+      ],
+      "linkedWorkOrder": {
+        "id": "974ed1a3-ccad-5a9e-ad73-25b326fb48aa",
+        "title": "Annual Steam System Inspection"
+      },
+      "linkConfidence": "Inferred",
+      "rootCauseCategories": [
+        "HVAC / comfort / ventilation",
+        "Unknown pending inspection"
+      ],
+      "missingInformation": [
+        "Exact room/asset tag",
+        "Photo or vendor verification"
+      ],
+      "followUpQuestions": [
+        "Is water still present / spreading?",
+        "Which fixture(s) affected?",
+        "Is there a known shutoff location?",
+        "Has this been reported before?"
+      ],
+      "publicEnrichment": [],
+      "compliance": {
+        "ruleId": "hvac_comfort",
+        "obligations": [
+          "NYC heat season requirements (Oct 1 \u2013 May 31)",
+          "Ventilation / IAQ review for occupied classrooms",
+          "BMS trend verification"
+        ],
+        "escalateIf": [
+          "occupied classroom >3 days",
+          "headaches reported",
+          "recurring same zone"
+        ],
+        "inspection": "Verify supply air temp, damper position, actuator, schedule",
+        "agency": "HPD (residential) / facilities operator",
+        "confidence": "Likely"
+      },
+      "escalate": false,
+      "cleanedDescription": "240 2nd Avenue \u00b7 Floor 3: HVAC / comfort / ventilation. Student reports: \"Steam valve area feels hotter than usual on floor 3 near mechanical room\". Duration: unknown. Still happening: True. Recommended: Verify supply air temp, damper position, actuator, schedule.",
+      "recommendedAction": "Inspect hvac / comfort / ventilation; link to asset; dispatch HPD (residential) / facilities operator; schedule within normal SLA",
+      "assignmentGroup": "HVAC vendor",
+      "studentStatusMessage": "We received your signal and linked it to facilities. An inspection is recommended.",
+      "closureVerificationQuestion": "Did the issue actually get fixed? (Yes / Still happening / Worse)",
+      "confidenceLabels": {
+        "location": "Inferred",
+        "issue": "Likely",
+        "link": "Inferred",
+        "publicData": "Missing",
+        "compliance": "Likely"
+      }
+    },
+    "closure": null
+  }
+]

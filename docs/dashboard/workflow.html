@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Signal Workflow — 240 2nd Avenue</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/workflow.css" />
+</head>
+<body data-data-base="../data">
+  <header>
+    <div>
+      <h1>Student Signal Workflow</h1>
+      <p>Team 12 · Challenge 02 · <a href="index.html">Dashboard</a> · <a href="../submission.html">Submission</a></p>
+    </div>
+    <p>Signal → Evidence → Action → Verification</p>
+  </header>
+  <main class="workflow-main">
+    <section class="steps">
+      <div class="step active" data-step="1">1 · Select WO</div>
+      <div class="step" data-step="2">2 · Field truth</div>
+      <div class="step" data-step="3">3 · AI structure</div>
+      <div class="step" data-step="4">4 · Public data</div>
+      <div class="step" data-step="5">5 · Workflow</div>
+      <div class="step" data-step="6">6 · Closure</div>
+    </section>
+
+    <div class="workflow-grid">
+      <div class="panel">
+        <h2>1 — Select work order or pattern</h2>
+        <p class="muted">Start from live CriticalAsset feed. Pick weak data to improve.</p>
+        <select id="wo-select"><option value="">— choose work order —</option></select>
+        <div id="wo-preview" class="wo-preview muted">No selection</div>
+      </div>
+
+      <div class="panel">
+        <h2>2 — Field observation</h2>
+        <label>What did you experience? (one sentence)</label>
+        <textarea id="signal-input" rows="4" placeholder="The third-floor bathroom has been closed for two weeks. There is water near the sink."></textarea>
+        <label>Photo note (optional)</label>
+        <input id="photo-note" type="text" placeholder="e.g. Photo attached: wet floor near drain" />
+        <div class="row-checks">
+          <label><input type="checkbox" id="still-happening" checked /> Still happening</label>
+          <label><input type="checkbox" id="happened-before" /> Happened before</label>
+        </div>
+        <button id="btn-structure" class="primary">Structure with AI →</button>
+      </div>
+    </div>
+
+    <div id="results" class="results hidden">
+      <div class="panel">
+        <h2>3 — AI structured record</h2>
+        <div id="structured-out"></div>
+      </div>
+      <div class="panel">
+        <h2>4 — Public evidence (NYC Open Data)</h2>
+        <div id="public-out"></div>
+      </div>
+      <div class="panel">
+        <h2>5 — Compliance & workflow recommendation</h2>
+        <div id="workflow-out"></div>
+        <div class="actions">
+          <button id="btn-download" class="secondary">Download payload JSON</button>
+          <button id="btn-record" class="primary">Prepare CriticalAsset record</button>
+        </div>
+        <pre id="record-cmd" class="cmd hidden"></pre>
+      </div>
+      <div class="panel">
+        <h2>6 — Closure verification</h2>
+        <p class="muted">Did the city actually change? Student confirms outcome.</p>
+        <div class="closure-btns">
+          <button data-closure="fixed" class="closure ok">Fixed</button>
+          <button data-closure="still" class="closure warn">Still happening</button>
+          <button data-closure="worse" class="closure bad">Worse</button>
+        </div>
+        <div id="closure-out" class="muted"></div>
+      </div>
+    </div>
+  </main>
+  <script src="js/workflow-engine.js"></script>
+  <script src="js/workflow.js"></script>
+</body>
+</html>

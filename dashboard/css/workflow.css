@@ -1,0 +1,32 @@
+.workflow-main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; }
+.steps { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.step { font-size: 0.75rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+.step.active { background: rgba(61,156,245,0.15); color: var(--accent); border-color: var(--accent); }
+.workflow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 800px) { .workflow-grid { grid-template-columns: 1fr; } }
+.workflow-grid label, .workflow-grid h2 { font-size: 0.875rem; display: block; margin: 0.5rem 0 0.25rem; }
+.workflow-grid input[type=text], .workflow-grid select, .workflow-grid textarea {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem; font-family: inherit;
+}
+.wo-preview { margin-top: 0.75rem; font-size: 0.8rem; line-height: 1.5; }
+.row-checks { display: flex; gap: 1rem; margin: 0.75rem 0; font-size: 0.875rem; }
+button.primary { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 0.6rem 1rem; font-weight: 600; cursor: pointer; margin-top: 0.5rem; }
+button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 6px; padding: 0.5rem 1rem; cursor: pointer; }
+.results { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.results.hidden { display: none; }
+@media (max-width: 900px) { .results { grid-template-columns: 1fr; } }
+.results .panel:last-child, .results .panel:nth-child(3) { grid-column: 1 / -1; }
+.field-grid { display: grid; gap: 0.35rem; font-size: 0.85rem; }
+.field-grid dt { color: var(--muted); }
+.field-grid dd { margin-bottom: 0.5rem; }
+.pub-row { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
+.pub-row strong { color: var(--accent); }
+.actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+.cmd { background: var(--bg); border: 1px solid var(--border); padding: 0.75rem; border-radius: 6px; font-size: 0.75rem; margin-top: 0.75rem; overflow-x: auto; }
+.closure-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+.closure { border: none; border-radius: 6px; padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; }
+.closure.ok { background: rgba(107,207,127,0.25); color: var(--low); }
+.closure.warn { background: rgba(245,166,35,0.25); color: var(--open); }
+.closure.bad { background: rgba(231,76,60,0.25); color: var(--overdue); }
+.escalate { color: var(--overdue); font-weight: 600; margin-top: 0.5rem; }

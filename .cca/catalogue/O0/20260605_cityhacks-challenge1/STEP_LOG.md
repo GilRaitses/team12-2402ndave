@@ -1,6 +1,17 @@
 # O0 step log — Team 12 City Hacks Challenge 1
 
-## 2026-06-05 — COMPLETE
+## 2026-06-05 — Challenge 02 + full hackathon COMPLETE
+
+- Challenge 02 workflow UI: `dashboard/workflow.html`
+- AI structure: `workflow-engine.js` + `scripts/ai_structure.py`
+- NYC Open Data: 311 (25) + HPD (15) in `data/public/nyc_open_data.json`
+- Compliance rules: `data/compliance_rules.json`
+- Write-back: `createWorkOrder` + `updateWorkOrder` via `scripts/record_signal.py`
+- Closure log: `data/closure_log.json`
+- Full submission page updated for C01 + C02 + rules checklist
+- Work orders now 4+ after live write-back tests
+
+## 2026-06-05 — Challenge 01 COMPLETE
 
 ### Auth (O1)
 - M2M credentials: still invalid on staging.

@@ -1,0 +1,19 @@
+id: O0_cityhacks_challenge2_team12
+lane: O0
+date: 2026-06-05
+label: Team 12 — Challenge 02 — Student Signal AI Workflow
+parent: O0_cityhacks_challenge1_team12
+status: complete
+purpose: >
+  Field truth capture, AI structuring, NYC public data enrichment, compliance
+  context, workflow recommendations, closure verification, and CriticalAsset
+  write-back for 240 2nd Avenue.
+deliverables:
+  - dashboard/workflow.html
+  - dashboard/js/workflow-engine.js
+  - dashboard/js/workflow.js
+  - scripts/ai_structure.py
+  - scripts/enrich_public.py
+  - scripts/record_signal.py
+  - data/compliance_rules.json
+  - data/public/nyc_open_data.json

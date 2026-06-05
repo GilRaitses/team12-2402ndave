@@ -140,6 +140,13 @@ def main() -> int:
         print(f"Authenticated fetch failed: {exc}", file=sys.stderr)
         print("Schema snapshot saved. Fix credentials then re-run.", file=sys.stderr)
         return 1
+
+    enrich = subprocess.run([sys.executable, str(ROOT / "scripts" / "enrich_public.py")], capture_output=True, text=True)
+    if enrich.returncode == 0:
+        print(enrich.stdout.strip())
+    else:
+        print(f"Public data enrich warning: {enrich.stderr}", file=sys.stderr)
+
     print("Hydration complete.")
     return 0
 

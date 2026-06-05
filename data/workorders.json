@@ -1,8 +1,38 @@
 {
   "data": {
     "workOrders": {
-      "totalCount": 3,
+      "totalCount": 4,
       "nodes": [
+        {
+          "id": "3b0417a5-f50b-456b-be33-e9a970fc1a87",
+          "title": "Student Signal: Third-floor bathroom water near sink",
+          "description": "Field observation: bathroom closed two weeks, water near sink. Structured by Student Signal workflow. Confidence labels: Location=Inferred, Issue=Likely.\n\n[Closure check pending]",
+          "severity": "high",
+          "executionPriority": "high",
+          "startDate": null,
+          "endDate": null,
+          "locationId": "31c0375d-326a-59f1-aa3f-93cf05def576",
+          "locationAddress": "240 2nd Avenue",
+          "workOrderType": "corrective_maintenance",
+          "workOrderServiceCategory": "plumbing",
+          "workOrderStageId": "f15658fd-eac4-4ebd-8fd4-43a32d50b5d2",
+          "workOrderStage": {
+            "id": "f15658fd-eac4-4ebd-8fd4-43a32d50b5d2",
+            "name": "To Do"
+          },
+          "location": {
+            "id": "31c0375d-326a-59f1-aa3f-93cf05def576",
+            "locationName": "240 2nd Avenue",
+            "address": "240 2nd Avenue",
+            "city": "",
+            "state": ""
+          },
+          "workOrderAssets": [],
+          "createdAt": "1780681273903",
+          "updatedAt": "1780681274560",
+          "asset": null,
+          "assignees": []
+        },
         {
           "id": "974ed1a3-ccad-5a9e-ad73-25b326fb48aa",
           "title": "Annual Steam System Inspection",

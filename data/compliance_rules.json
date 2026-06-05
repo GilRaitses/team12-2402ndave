@@ -1,0 +1,45 @@
+{
+  "rules": [
+    {
+      "id": "plumbing_sanitary",
+      "match": ["plumb", "bathroom", "drain", "sewer", "leak", "water", "flood", "sink"],
+      "obligations": ["NYC Housing Maintenance Code — plumbing / sanitary maintenance", "HPD complaint path for habitability", "School facility sanitation SOP"],
+      "escalateIf": ["water spreading", "sewage odor", "multi-fixture failure", "electrical proximity"],
+      "inspection": "Licensed plumber inspection; photo evidence of drain/trap/shutoff",
+      "agency": "HPD / DOB (if construction-related)"
+    },
+    {
+      "id": "hvac_comfort",
+      "match": ["hot", "cold", "heat", "hvac", "air", "temperature", "ventilation", "steam"],
+      "obligations": ["NYC heat season requirements (Oct 1 – May 31)", "Ventilation / IAQ review for occupied classrooms", "BMS trend verification"],
+      "escalateIf": ["occupied classroom >3 days", "headaches reported", "recurring same zone"],
+      "inspection": "Verify supply air temp, damper position, actuator, schedule",
+      "agency": "HPD (residential) / facilities operator"
+    },
+    {
+      "id": "electrical_safety",
+      "match": ["electric", "panel", "power", "spark", "breaker", "outlet"],
+      "obligations": ["NFPA 70 / electrical safety escalation", "No closure without thermal scan if panel involved", "Water + electrical = immediate escalation"],
+      "escalateIf": ["water near electrical", "burning smell", "repeated trip"],
+      "inspection": "Licensed electrician; thermal imaging on distribution",
+      "agency": "DOB / FDNY (life safety crossover)"
+    },
+    {
+      "id": "fire_life_safety",
+      "match": ["fire", "alarm", "sprinkler", "egress", "door", "extinguisher", "smoke"],
+      "obligations": ["FDNY fire/life-safety inspection requirements", "Egress path must remain clear", "Cannot defer without compensating measures"],
+      "escalateIf": ["blocked egress", "alarm impaired", "sprinkler leak"],
+      "inspection": "Fire safety officer review before closure",
+      "agency": "FDNY"
+    },
+    {
+      "id": "elevator_access",
+      "match": ["elevator", "lift", "accessibility", "ada"],
+      "obligations": ["DOB elevator inspection cycle", "ADA access continuity", "Service vendor dispatch SLA"],
+      "escalateIf": ["sole accessible route", "entrapment", "inspection overdue"],
+      "inspection": "Elevator vendor + DOB inspection history",
+      "agency": "DOB"
+    }
+  ],
+  "disclaimer": "Prototype obligation hints for operator review — not legal advice."
+}

@@ -6,9 +6,11 @@ rm -rf "$ROOT/docs/dashboard" "$ROOT/docs/data"
 mkdir -p "$ROOT/docs"
 cp -R "$ROOT/dashboard" "$ROOT/docs/dashboard"
 mkdir -p "$ROOT/docs/data"
-for f in workorders.json assets.json locations.json locations_tree.json meta.json; do
+for f in workorders.json assets.json locations.json locations_tree.json meta.json compliance_rules.json; do
   [ -f "$ROOT/data/$f" ] && cp "$ROOT/data/$f" "$ROOT/docs/data/"
 done
+[ -f "$ROOT/data/public/nyc_open_data.json" ] && mkdir -p "$ROOT/docs/data/public" && cp "$ROOT/data/public/nyc_open_data.json" "$ROOT/docs/data/public/"
+[ -f "$ROOT/data/closure_log.json" ] && cp "$ROOT/data/closure_log.json" "$ROOT/docs/data/"
 cat > "$ROOT/docs/index.html" <<'EOF'
 <!DOCTYPE html>
 <html lang="en">
